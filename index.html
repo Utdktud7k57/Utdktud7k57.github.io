@@ -1,49 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tejaswini Samudrala – Portfolio</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fdfdfd;
+      color: #333;
       margin: 0;
       padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
     }
 
     header {
       background-color: #003049;
-      color: #fff;
-      padding: 20px 40px;
+      color: white;
+      padding: 30px 20px;
       text-align: center;
     }
 
-    h1 {
-      margin: 0;
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      margin-top: 10px;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      color: #fcbf49;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      text-decoration: underline;
     }
 
     main {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 0 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
     section {
-      margin-bottom: 40px;
-      background-color: #ffffff;
-      border: 1px solid #ddd;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      background: white;
+      margin-bottom: 30px;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
     }
 
     h2 {
       color: #003049;
-    }
-
-    ul {
-      padding-left: 20px;
     }
 
     a {
@@ -60,37 +74,79 @@
       text-align: center;
       padding: 20px;
       font-size: 0.9em;
-      color: #666;
+      color: #555;
     }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section:nth-of-type(1) { animation-delay: 0.2s; }
+    section:nth-of-type(2) { animation-delay: 0.4s; }
+    section:nth-of-type(3) { animation-delay: 0.6s; }
+    section:nth-of-type(4) { animation-delay: 0.8s; }
+    section:nth-of-type(5) { animation-delay: 1s; }
   </style>
 </head>
 <body>
   <header>
     <h1>Tejaswini Samudrala</h1>
-    <p>  Portfolio</p>
+    <p>MSc Data Science & AI | Aspiring Analyst</p>
+    <img src="me.jpg" alt="Tejaswini Profile Photo" />
+    <div class="socials">
+      <a href="https://medium.com/@samudralat77" target="_blank">📝 Medium</a>
+      <a href="https://www.linkedin.com/in/tejaswini-harshitha-samudrala/" target="_blank">💼 LinkedIn</a>
+    </div>
   </header>
 
   <main>
     <section>
-      <h2>📊 Insurance Charges Prediction</h2>
-      <p><strong>Overview:</strong> Explored the Medical Cost Personal Dataset to understand how features like age, BMI, smoking status, and region affect insurance charges. Performed EDA and built multiple regression models.</p>
+      <h2>👋 About Me</h2>
+      <p>Hi! I'm Tejaswini, a Data Science graduate from the University of Liverpool. I'm passionate about using data to solve real-world problems and tell stories through visuals and models.</p>
+    </section>
 
+    <section>
+      <h2>🎓 Education</h2>
       <ul>
-        <li>Visual EDA: boxplots, scatter plots, heatmaps</li>
-        <li>Models: Linear Regression, Decision Tree, Random Forest, Gradient Boosting</li>
-        <li><strong>Gradient Boosting</strong> performed best (R² = 0.8793)</li>
-        <li>Top predictors: Smoker status, BMI, Age</li>
+        <li><strong>MSc</strong> in Data Science & AI – University of Liverpool </li>
+        <li><strong>B.Tech</strong> in Electronics & Communication Engineering – JNTUH </li>
       </ul>
+    </section>
 
-      <p>
-        🔗 <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank">
-        View Full Project on Kaggle</a>
-      </p>
+    <section>
+      <h2>🌿 Hobbies & Interests</h2>
+      <p>📖 I enjoy reading stories and research articles, journaling my thoughts, and taking walks across the park to clear my mind.</p>
+    </section>
+
+    <section>
+      <h2>📊 Featured Project: Insurance Charges Prediction</h2>
+      <p><strong>Overview:</strong> This Kaggle notebook explores the Medical Cost Personal Dataset with EDA and regression models to predict insurance charges.</p>
+      <ul>
+        <li>Analyzed age, BMI, smoking, and region with visualizations</li>
+        <li>Best model: Gradient Boosting (R² = 0.8793)</li>
+        <li>Identified most impactful features using feature importance</li>
+      </ul>
+      <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank">
+        🔗 View Full Project on Kaggle
+      </a>
+    </section>
+
+    <section>
+      <h2>📬 Contact Me</h2>
+      <p>If you'd like to connect, feel free to email me directly:</p>
+      <p><strong>Email:</strong> <a href="mailto:samudralat77@gmail.com">your.email@example.com</a></p>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Tejaswini Samudrala | Built with ❤️ using GitHub Pages
+    &copy; 2025 Tejaswini Samudrala | Portfolio site built with ❤️ using GitHub Pages
   </footer>
 </body>
 </html>
