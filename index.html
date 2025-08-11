@@ -6,12 +6,12 @@
 <title>Tejaswini Samudrala – Portfolio</title>
 
 <style>
-  /* Reset and base */
+  /* Base styles */
   * {
     margin: 0; padding: 0; box-sizing: border-box;
   }
   html {
-    scroll-behavior: smooth; /* Smooth scroll on anchor links */
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
   }
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -29,87 +29,77 @@
     color: #fcbf49;
     outline: none;
   }
-  /* Container */
-  .container {
-    max-width: 900px;
-    margin: auto;
-    padding: 20px 15px;
-  }
-  /* Sticky Header */
+  /* Header from original */
   header {
-    position: sticky;
-    top: 0;
-    background: #003049;
+    background-color: #003049;
     color: white;
-    padding: 15px 15px 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-    z-index: 100;
     text-align: center;
+    padding: 30px 20px 15px;
+    position: relative;
   }
   header h1 {
-    font-size: 1.8rem;
-    margin-bottom: 2px;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
   }
   header p {
+    font-size: 1.1rem;
     font-weight: 500;
-    font-size: 1rem;
-    opacity: 0.85;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
   header img {
-    display: block;
-    width: 100px;
-    height: 100px;
+    width: 80px; /* smaller photo */
+    height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #fff;
-    margin: 0 auto 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    border: 3px solid #fff;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
   }
-  /* Navigation (below header) */
+  /* Nav bar below header */
   nav {
-    background: #004b71;
+    position: sticky;
+    top: 0;
+    background: #fcbf49;
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 8px 0;
+    padding: 10px 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    z-index: 1000;
   }
   nav a {
-    color: #fcbf49;
-    font-weight: 600;
-    font-size: 0.95rem;
-    padding: 6px 12px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    color: #003049;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   nav a:hover, nav a:focus {
-    background: #d62828;
+    background-color: #d62828;
     color: white;
     outline: none;
   }
-  /* Social Links */
-  .socials {
-    margin-top: 8px;
-  }
-  .socials a {
-    margin: 0 12px;
-    font-size: 1.15rem;
-    display: inline-block;
+  /* Container */
+  main.container {
+    max-width: 900px;
+    margin: 30px auto 60px;
+    padding: 0 20px;
   }
   /* Sections */
   section {
     background: white;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     padding: 25px 25px 35px;
-    margin-bottom: 35px;
+    margin-bottom: 40px;
     opacity: 0;
     transform: translateY(20px);
     animation-fill-mode: forwards;
-    animation-duration: 0.8s;
+    animation-duration: 0.7s;
     animation-timing-function: ease-out;
   }
-  /* Fade in sequence */
   section:nth-of-type(1) { animation-name: fadeInUp; animation-delay: 0.15s; }
   section:nth-of-type(2) { animation-name: fadeInUp; animation-delay: 0.35s; }
   section:nth-of-type(3) { animation-name: fadeInUp; animation-delay: 0.55s; }
@@ -123,7 +113,6 @@
       transform: translateY(0);
     }
   }
-
   /* Section Titles */
   h2 {
     color: #003049;
@@ -142,13 +131,8 @@
   ul li {
     margin-bottom: 7px;
   }
-  /* About Me */
-  #about p, #about ul {
-    font-size: 1rem;
-    color: #444;
-  }
   /* Projects */
-  #projects ul, #education ul {
+  #projects ul {
     margin-top: 10px;
   }
   #projects a.project-link {
@@ -184,7 +168,6 @@
     border-radius: 7px;
     text-align: center;
     box-shadow: 0 0 12px rgba(246,192,73,0.7);
-    /* Removed hover/focus highlight for simplicity */
     cursor: default;
   }
   /* Hobbies */
@@ -224,7 +207,7 @@
   <h1>Tejaswini Samudrala</h1>
   <p>Data Science & AI | Aspiring Analyst</p>
   <img src="professional.jpg" alt="Tejaswini Samudrala photo" />
-  <div class="socials">
+  <div class="socials" style="margin-top:12px;">
     <a href="https://medium.com/@samudralat77" target="_blank" rel="noopener noreferrer" aria-label="Medium profile">📝 Medium</a>
     <a href="https://www.linkedin.com/in/tejaswini-harshitha-samudrala/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">💼 LinkedIn</a>
   </div>
@@ -252,7 +235,7 @@
     <ul>
       <li>Proficient in <strong>Python</strong>, <strong>SQL</strong>, <strong>Excel</strong>, <strong>Power BI</strong>, and <strong>Tableau</strong></li>
       <li>Comfortable across the full data pipeline – from data wrangling to model building and dashboard creation</li>
-      <li>Experienced with tools/libraries like <strong>Pandas</strong>, <strong>NumPy</strong>, <strong>Scikit-learn</strong>, <strong>Matplotlib</strong>, <strong>Seaborn</strong>, and <strong>OpenCV</strong></li>
+      <li>Experienced with tools/libraries like <strong>Pandas</strong>, <strong>NumPy</strong>, <strong>Scikit-learn</strong>, <strong>Matplotlib</strong>, <strong>Seaborn</strong>, and <strong>OpenCV</li>
       <li>Solid foundation in machine learning – including classification, clustering, and predictive modeling</li>
       <li>Skilled in simplifying technical concepts for non-technical stakeholders</li>
     </ul>
@@ -323,20 +306,22 @@
 </footer>
 
 <script>
-  // Simple fade-in on scroll for sections (for browsers that support IntersectionObserver)
+  // Fade in on scroll
   document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
-    const options = { threshold: 0.15 };
-    const observer = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.animationPlayState = 'running';
-          observer.unobserve(entry.target);
+        if(entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          obs.unobserve(entry.target);
         }
       });
-    }, options);
+    }, { threshold: 0.15 });
+
     sections.forEach(section => {
-      section.style.animationPlayState = 'paused';
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(20px)';
       observer.observe(section);
     });
   });
