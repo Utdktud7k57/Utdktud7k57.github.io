@@ -1,185 +1,488 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tejaswini Samudrala – Portfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #fdfdfd;
-      color: #333;
-      margin: 0;
-      padding: 0;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Tejaswini Samudrala Portfolio</title>
 
-    header {
-      background-color: #003049;
-      color: white;
-      padding: 30px 20px;
+<!-- Google Fonts: Poppins for modern vibe -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+
+<style>
+  /* Reset & base */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #1E1F28;
+    color: #F0F0F5;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: #FF6F61;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover {
+    color: #FFB88C;
+  }
+  /* Container */
+  .container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+  }
+  /* Header & Nav */
+  header {
+    background: #2E2F3E;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  nav .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #FF6F61;
+  }
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  nav ul li {
+    margin-left: 1.5rem;
+  }
+  nav ul li a {
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.05rem;
+  }
+  nav ul li a:hover {
+    color: #FFD2B7;
+  }
+  /* Hero Section */
+  #hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #FF6F61 0%, #FFB88C 100%);
+    color: #1E1F28;
+    border-radius: 0 0 50% 50% / 10% 10% 20% 20%;
+    margin-bottom: 3rem;
+  }
+  #hero .hero-text {
+    flex: 1 1 300px;
+  }
+  #hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  #hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+  #hero .btn {
+    background: #1E1F28;
+    color: #FFB88C;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+  }
+  #hero .btn:hover {
+    background: #FF6F61;
+    color: white;
+  }
+  #hero .hero-photo {
+    flex: 1 1 250px;
+    text-align: center;
+  }
+  #hero .hero-photo img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #1E1F28;
+    box-shadow: 0 0 15px 5px rgba(255,111,97,0.7);
+  }
+  /* Section Titles */
+  section {
+    margin-bottom: 4rem;
+  }
+  section h2 {
+    font-size: 2.4rem;
+    color: #FF6F61;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  section p.section-subtitle {
+    text-align: center;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    color: #FFD2B7;
+  }
+  /* About */
+  #about {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #DDD;
+    line-height: 1.8;
+  }
+  /* Projects */
+  #projects .project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 1.8rem;
+  }
+  .project-card {
+    background: #2E2F3E;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255,111,97,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(255,111,97,0.6);
+  }
+  .project-card h3 {
+    margin-bottom: 0.8rem;
+    color: #FFB88C;
+  }
+  .project-card p {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+    color: #DDD;
+  }
+  .project-card a.btn {
+    align-self: flex-start;
+    padding: 0.5rem 1rem;
+    background: #FF6F61;
+    border-radius: 25px;
+    font-weight: 600;
+    color: white;
+  }
+  .project-card a.btn:hover {
+    background: #FFD2B7;
+    color: #1E1F28;
+  }
+  /* Skills */
+  #skills .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.8rem;
+  }
+  .skill-item {
+    background: #2E2F3E;
+    padding: 1rem 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 12px rgba(255,111,97,0.3);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #FFB88C;
+    transition: background 0.3s ease;
+    cursor: default;
+    position: relative;
+  }
+  .skill-item:hover {
+    background: #FF6F61;
+    color: white;
+    box-shadow: 0 0 20px #FF6F61;
+  }
+  /* Animated progress bars */
+  .progress-container {
+    width: 100%;
+    background: #444657;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+  }
+  .progress-bar {
+    height: 10px;
+    background: #FF6F61;
+    width: 0;
+    transition: width 1.2s ease-in-out;
+    border-radius: 10px;
+  }
+  /* Resume */
+  #resume {
+    text-align: center;
+  }
+  #resume a.btn {
+    background: #FF6F61;
+    padding: 1rem 2rem;
+    border-radius: 40px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(255,111,97,0.5);
+    transition: background 0.3s ease;
+  }
+  #resume a.btn:hover {
+    background: #FFB88C;
+    color: #1E1F28;
+  }
+  /* Contact */
+  #contact form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  #contact label {
+    margin: 0.8rem 0 0.3rem;
+    font-weight: 600;
+    color: #FFD2B7;
+  }
+  #contact input, #contact textarea {
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    resize: vertical;
+  }
+  #contact input:focus, #contact textarea:focus {
+    outline: none;
+    box-shadow: 0 0 6px #FF6F61;
+  }
+  #contact button {
+    margin-top: 1.5rem;
+    background: #FF6F61;
+    border: none;
+    padding: 1rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  #contact button:hover {
+    background: #FFB88C;
+    color: #1E1F28;
+  }
+  /* Hobbies */
+  #hobbies .hobby-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+  .hobby-item {
+    background: #2E2F3E;
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    font-weight: 600;
+    color: #FFD2B7;
+    box-shadow: 0 0 15px rgba(255,111,97,0.2);
+    cursor: default;
+    text-align: center;
+    width: 160px;
+  }
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    color: #555;
+    font-size: 0.9rem;
+    background: #1E1F28;
+  }
+  /* Responsive */
+  @media(max-width: 768px) {
+    #hero {
+      flex-direction: column;
+    }
+    #hero .hero-text {
       text-align: center;
+      margin-bottom: 2rem;
     }
-
-    header img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid #fff;
-      margin-top: 10px;
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
     }
-
-    .socials a {
-      margin: 0 10px;
-      color: #fcbf49;
-      font-weight: bold;
-      text-decoration: none;
+    nav ul li {
+      margin: 0.5rem 1rem;
     }
-
-    .socials a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    section {
-      background: white;
-      margin-bottom: 30px;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      opacity: 0;
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    h2 {
-      color: #003049;
-    }
-
-    a {
-      color: #d62828;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: #555;
-    }
-
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    section:nth-of-type(1) { animation-delay: 0.2s; }
-    section:nth-of-type(2) { animation-delay: 0.4s; }
-    section:nth-of-type(3) { animation-delay: 0.6s; }
-    section:nth-of-type(4) { animation-delay: 0.8s; }
-    section:nth-of-type(5) { animation-delay: 1s; }
-  </style>
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Tejaswini Samudrala</h1>
-    <p> Data Science & AI | Aspiring Analyst</p>
-    <img src="professional.jpg" alt="Tejaswini samudrala" />
-    <div class="socials">
-      <a href="https://medium.com/@samudralat77" target="_blank">📝 Medium</a>
-      <a href="https://www.linkedin.com/in/tejaswini-harshitha-samudrala/" target="_blank">💼 LinkedIn</a>
-    </div>
-  </header>
 
-  <main>
-    <section>
-      <h2>👋 About Me</h2>
-      <p>
-        <section id="about-me">
+<header>
+  <nav class="container">
+    <div class="logo">Tejaswini S.</div>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="hero" aria-label="Introduction">
+  <div class="hero-text">
+    <h1>Tejaswini Samudrala</h1>
+    <p>Data Science & AI Enthusiast | Problem Solver | Tech Explorer</p>
+    <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in Touch</button>
+  </div>
+  <div class="hero-photo">
+    <img src="photo.jpg" alt="Photo of Tejaswini Samudrala" />
+  </div>
+</section>
+
+<section id="about" aria-label="About me">
   <h2>About Me</h2>
   <p>
-    Hi, I’m <strong>Tejaswini Samudrala</strong> — a postgraduate in <strong>Data Science and Artificial Intelligence</strong> from the <strong>University of Liverpool</strong>, driven by curiosity, creativity, and a passion for solving real-world problems through data.
-  </p>
-  <p>
-    I’ve worked on projects ranging from building an OCR system to improve accessibility to cancer biomarker discovery using unsupervised learning. I love turning complex datasets into meaningful insights and telling clear, compelling data stories.
-  </p>
-
-  <h3>What I Bring:</h3>
-  <ul>
-    <li>Proficient in <strong>Python</strong>, <strong>SQL</strong>, <strong>Excel</strong>, <strong>Power BI</strong>, and <strong>Tableau</strong></li>
-    <li>Comfortable across the full data pipeline – from data wrangling to model building and dashboard creation</li>
-    <li>Experienced with tools/libraries like <strong>Pandas</strong>, <strong>NumPy</strong>, <strong>Scikit-learn</strong>, <strong>Matplotlib</strong>, <strong>Seaborn</strong>, and <strong>OpenCV</strong></li>
-    <li>Solid foundation in machine learning – including classification, clustering, and predictive modeling</li>
-    <li>Skilled in simplifying technical concepts for non-technical stakeholders</li>
-  </ul>
-
-  <h3>What I’m Looking For:</h3>
-  <p>
-    I’m actively seeking full-time, internship, or freelance opportunities in:
-  </p>
-  <ul>
-    <li>Data Analytics</li>
-    <li>Business Intelligence</li>
-    <li>Machine Learning</li>
-    <li>Any space where data meets creativity and impact</li>
-  </ul>
-
-  <p>
-    I thrive in collaborative environments, believe in lifelong learning, and I’m always open to new challenges and meaningful connections. Let’s connect if you’re hiring, collaborating, or just as passionate about data as I am!
+    Hi! I'm Tejaswini, a passionate Data Science and Artificial Intelligence postgraduate from the University of Liverpool. I love exploring data-driven solutions, building innovative projects, and continuously learning new technologies. Beyond tech, I enjoy reading, journaling, and peaceful walks in the park.
   </p>
 </section>
 
+<section id="projects" aria-label="Projects">
+  <h2>Projects</h2>
+  <p class="section-subtitle">Some of my key works and analyses</p>
+  <div class="project-list">
+    <article class="project-card" tabindex="0">
+      <h3>Medical Cost Analysis and Charge Prediction</h3>
+      <p>A Kaggle project analyzing medical costs and predicting charges using regression techniques.</p>
+      <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank" rel="noopener" class="btn" aria-label="Open Medical Cost Analysis Kaggle project">View Project</a>
+    </article>
 
-    <section>
-      <h2>🎓 Education</h2>
-      <ul>
-        <li><strong>MSc</strong> in Data Science & AI – University of Liverpool </li>
-        <li><strong>B.Tech</strong> in Electronics & Communication Engineering – JNTUH </li>
-      </ul>
-    </section>
+    <article class="project-card" tabindex="0">
+      <h3>Mining Grocery Purchase Patterns</h3>
+      <p>Discovering purchase patterns from grocery data using association rules mining on Kaggle.</p>
+      <a href="https://www.kaggle.com/code/samudralatejaswini/mining-grocery-purchase-patterns" target="_blank" rel="noopener" class="btn" aria-label="Open Mining Grocery Purchase Patterns Kaggle project">View Project</a>
+    </article>
 
-    <section>
-      <h2>🌿 Hobbies & Interests</h2>
-      <p>📖 I enjoy reading stories and research articles, journaling my thoughts, and taking walks across the park to clear my mind.</p>
-    </section>
+    <article class="project-card" tabindex="0">
+      <h3>Traffic Light PPO</h3>
+      <p>GitHub repo for a traffic light control project using reinforcement learning PPO algorithm.</p>
+      <a href="https://github.com/Utdktud7k57/traffic-light-ppo" target="_blank" rel="noopener" class="btn" aria-label="Open Traffic Light PPO GitHub repository">View Project</a>
+    </article>
+  </div>
+</section>
 
-    <section>
-      <h2>📊 Featured Project: Insurance Charges Prediction</h2>
-      <p><strong>Overview:</strong> This Kaggle notebook explores the Medical Cost Personal Dataset with EDA and regression models to predict insurance charges.</p>
-      <ul>
-        <li>Analyzed age, BMI, smoking, and region with visualizations</li>
-        <li>Best model: Gradient Boosting (R² = 0.8793)</li>
-        <li>Identified most impactful features using feature importance</li>
-      </ul>
-      <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank">
-        🔗 View Full Project on Kaggle
-      </a>
-    </section>
+<section id="skills" aria-label="Skills">
+  <h2>Skills</h2>
+  <div class="skills-list" aria-label="List of skills">
+    <div class="skill-item" tabindex="0">
+      Python
+      <div class="progress-container" aria-hidden="true">
+        <div class="progress-bar" style="width: 85%;"></div>
+      </div>
+    </div>
+    <div class="skill-item" tabindex="0">
+      Machine Learning
+      <div class="progress-container" aria-hidden="true">
+        <div class="progress-bar" style="width: 80%;"></div>
+      </div>
+    </div>
+    <div class="skill-item" tabindex="0">
+      Data Visualization
+      <div class="progress-container" aria-hidden="true">
+        <div class="progress-bar" style="width: 75%;"></div>
+      </div>
+    </div>
+    <div class="skill-item" tabindex="0">
+      SQL
+      <div class="progress-container" aria-hidden="true">
+        <div class="progress-bar" style="width: 70%;"></div>
+      </div>
+    </div>
+    <div class="skill-item" tabindex="0">
+      R Programming
+      <div class="progress-container" aria-hidden="true">
+        <div class="progress-bar" style="width: 65%;"></div>
+      </div>
+    </div>
+    <div class="skill-item" tabindex="0">
+      Git & GitHub
+      <div class="progress-container" aria-hidden="true">
+        <div class="progress-bar" style="width: 90%;"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section>
-      <h2>📬 Contact Me</h2>
-      <p>If you'd like to connect, feel free to email me directly:</p>
-      <p><strong>Email:</strong> <a href="mailto:samudralat77@gmail.com">samudralat77@gmail.com</a></p>
-    </section>
-  </main>
+<section id="hobbies" aria-label="Hobbies and Interests">
+  <h2>Hobbies & What I Do Besides Tech</h2>
+  <div class="hobby-list" aria-label="List of hobbies">
+    <div class="hobby-item" tabindex="0">Reading</div>
+    <div class="hobby-item" tabindex="0">Journaling</div>
+    <div class="hobby-item" tabindex="0">Walking in the Park</div>
+    <div class="hobby-item" tabindex="0">Crocheting</div>
+    <div class="hobby-item" tabindex="0">Cooking</div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 Tejaswini Samudrala | Portfolio site built with ❤️ using GitHub Pages
-  </footer>
-</body>
-</html>
+<section id="resume" aria-label="Resume">
+  <h2>Resume</h2>
+  <p class="section-subtitle">Download my full resume below</p>
+  <a href="Tejaswini_Samudrala_Resume.pdf" download class="btn" aria-label="Download Resume">Download Resume</a>
+</section>
+
+<section id="contact" aria-label="Contact Me">
+  <h2>Contact</h2>
+  <form action="mailto:your-email@example.com" method="POST" enctype="text/plain" aria-label="Contact form">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="Name" required placeholder="Your name" />
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="Email" required placeholder="your.email@example.com" />
+
+    <label for="message">Message</label>
+    <textarea id="message" name="Message" rows="5" required placeholder="Write your message here..."></textarea>
+
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 Tejaswini Samudrala — Built with ❤️ and a splash of vibrant colors
+</footer>
+
+<script>
+  // Animate skill progress bars when they come into view
+  const progressBars = document.querySelectorAll('.progress-bar');
+  const options = { threshold: 0.5 };
+
+  function animateBars(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        bar.style.width = bar.getAttribute('style').match(/width: ([0-9]+%)/)[1];
+        observer.unobserve(bar);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(animateBars, options);
+  progressBars.forEach(bar => {
+    bar.style.width = '0';
+    observer.observe(bar);
+  });
+</script
