@@ -6,324 +6,284 @@
 <title>Tejaswini Samudrala – Portfolio</title>
 
 <style>
-  /* Base styles */
+  /* Reset */
   * {
     margin: 0; padding: 0; box-sizing: border-box;
-  }
-  html {
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
   }
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #fdfdfd;
     color: #333;
     line-height: 1.6;
+    min-height: 100vh;
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
   }
-  a {
-    color: #d62828;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+  h1, h2 {
+    color: #003049;
   }
-  a:hover, a:focus {
-    color: #fcbf49;
-    outline: none;
-  }
-  /* Header from original */
-  header {
-    background-color: #003049;
-    color: white;
-    text-align: center;
-    padding: 30px 20px 15px;
-    position: relative;
-  }
-  header h1 {
+  h1 {
     font-size: 2.5rem;
-    margin-bottom: 5px;
+    margin-bottom: 0.2em;
   }
-  header p {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 15px;
-  }
-  header img {
-    width: 80px; /* smaller photo */
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #fff;
-    margin: 0 auto;
-    display: block;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.4);
-  }
-  /* Nav bar below header */
-  nav {
-    position: sticky;
-    top: 0;
-    background: #fcbf49;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 10px 0;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    z-index: 1000;
-  }
-  nav a {
-    color: #003049;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 8px 16px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  nav a:hover, nav a:focus {
-    background-color: #d62828;
-    color: white;
-    outline: none;
-  }
-  /* Container */
-  main.container {
-    max-width: 900px;
-    margin: 30px auto 60px;
-    padding: 0 20px;
-  }
-  /* Sections */
-  section {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 25px 25px 35px;
-    margin-bottom: 40px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation-fill-mode: forwards;
-    animation-duration: 0.7s;
-    animation-timing-function: ease-out;
-  }
-  section:nth-of-type(1) { animation-name: fadeInUp; animation-delay: 0.15s; }
-  section:nth-of-type(2) { animation-name: fadeInUp; animation-delay: 0.35s; }
-  section:nth-of-type(3) { animation-name: fadeInUp; animation-delay: 0.55s; }
-  section:nth-of-type(4) { animation-name: fadeInUp; animation-delay: 0.75s; }
-  section:nth-of-type(5) { animation-name: fadeInUp; animation-delay: 0.95s; }
-  section:nth-of-type(6) { animation-name: fadeInUp; animation-delay: 1.15s; }
-
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  /* Section Titles */
   h2 {
-    color: #003049;
-    font-weight: 700;
-    margin-bottom: 15px;
-    border-bottom: 3px solid #fcbf49;
-    display: inline-block;
-    padding-bottom: 4px;
+    font-size: 1.5rem;
+    margin-bottom: 0.3em;
   }
-  /* Lists styling */
-  ul {
-    list-style: inside disc;
-    margin-top: 10px;
+  p {
+    font-size: 1rem;
+    margin-bottom: 1em;
     color: #444;
   }
-  ul li {
-    margin-bottom: 7px;
+  img.profile-pic {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 3px solid #d62828;
+    object-fit: cover;
+    box-shadow: 0 3px 12px rgba(214, 40, 40, 0.4);
+    float: left;
+    margin-right: 20px;
   }
-  /* Projects */
-  #projects ul {
+  /* Intro Section */
+  #intro {
+    margin-bottom: 30px;
+    border-bottom: 3px solid #fcbf49;
+    padding-bottom: 25px;
+  }
+  /* Accordion styles */
+  .accordion {
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    background: white;
+    margin-bottom: 18px;
+    overflow: hidden;
+  }
+  .accordion-header {
+    background: #003049;
+    color: #fcbf49;
+    cursor: pointer;
+    padding: 15px 20px;
+    font-weight: 700;
+    font-size: 1.15rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    border: none;
+    outline: none;
+    transition: background 0.3s ease;
+  }
+  .accordion-header:hover {
+    background: #d62828;
+    color: white;
+  }
+  .accordion-header:focus-visible {
+    outline: 3px solid #fcbf49;
+  }
+  .accordion-header .icon {
+    font-weight: 900;
+    font-size: 1.5rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+  }
+  .accordion-header[aria-expanded="true"] .icon {
+    transform: rotate(45deg);
+  }
+  .accordion-content {
+    padding: 20px 25px;
+    display: none;
+    animation: fadeInContent 0.4s ease forwards;
+    font-size: 1rem;
+    color: #444;
+  }
+  .accordion-content ul {
+    list-style: inside disc;
     margin-top: 10px;
   }
-  #projects a.project-link {
+  .accordion-content ul li {
+    margin-bottom: 7px;
+  }
+  @keyframes fadeInContent {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  /* Contact form */
+  form {
+    margin-top: 20px;
+  }
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    resize: vertical;
+    margin-bottom: 15px;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: #d62828;
+    outline: none;
+  }
+  button {
+    background-color: #d62828;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover, button:focus {
+    background-color: #fcbf49;
+    color: #003049;
+    outline: none;
+  }
+  /* Clear float after intro */
+  #intro::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  /* Links in accordion */
+  a.project-link {
     display: inline-block;
-    margin-top: 12px;
-    padding: 7px 14px;
+    margin-top: 8px;
+    padding: 6px 12px;
     background: #d62828;
     color: white;
     border-radius: 6px;
     font-weight: 600;
-    transition: background 0.3s ease;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
   }
-  #projects a.project-link:hover, #projects a.project-link:focus {
-    background: #fcbf49;
+  a.project-link:hover, a.project-link:focus {
+    background-color: #fcbf49;
     color: #003049;
-    outline: none;
-  }
-  /* Skills Section */
-  #skills {
-    padding-top: 0;
-  }
-  .skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  .skill-item {
-    flex: 1 1 130px;
-    background: #003049;
-    color: #fcbf49;
-    font-weight: 600;
-    padding: 10px 15px;
-    border-radius: 7px;
-    text-align: center;
-    box-shadow: 0 0 12px rgba(246,192,73,0.7);
-    cursor: default;
-  }
-  /* Hobbies */
-  #hobbies p {
-    font-size: 1rem;
-    color: #444;
-    max-width: 600px;
-    margin: auto;
-  }
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 15px 10px;
-    font-size: 0.9em;
-    color: #555;
-    background: #f2f2f2;
-  }
-  /* Responsive */
-  @media (max-width: 650px) {
-    nav {
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .skill-list {
-      flex-direction: column;
-    }
-    .skill-item {
-      flex: 1 1 100%;
-    }
   }
 </style>
 
 </head>
 <body>
 
-<header>
-  <h1>Tejaswini Samudrala</h1>
-  <p>Data Science & AI | Aspiring Analyst</p>
-  <img src="professional.jpg" alt="Tejaswini Samudrala photo" />
-  <div class="socials" style="margin-top:12px;">
-    <a href="https://medium.com/@samudralat77" target="_blank" rel="noopener noreferrer" aria-label="Medium profile">📝 Medium</a>
-    <a href="https://www.linkedin.com/in/tejaswini-harshitha-samudrala/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">💼 LinkedIn</a>
+<section id="intro" tabindex="0" aria-label="Introduction and About Me">
+  <img src="professional.jpg" alt="Photo of Tejaswini Samudrala" class="profile-pic" />
+  <h1>Hey, I’m Tejaswini Samudrala</h1>
+  <p>Postgraduate in Data Science and Artificial Intelligence from University of Liverpool.</p>
+  <p>I’m passionate about solving real-world problems through data and turning complex datasets into meaningful insights.</p>
+
+  <!-- Contact Form always visible here -->
+  <h2>📬 Send me a message</h2>
+  <form id="contactForm" aria-label="Contact form">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required />
+
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- Accordion Sections -->
+<div class="accordion" role="region" aria-label="Projects section">
+  <button class="accordion-header" aria-expanded="false" aria-controls="projects-content" id="projects-header">
+    📊 Projects
+    <span class="icon">+</span>
+  </button>
+  <div id="projects-content" class="accordion-content" role="region" aria-labelledby="projects-header" hidden>
+    <ul>
+      <li><strong>Medical Cost Analysis and Charge Prediction:</strong>  
+        A Kaggle project analyzing medical costs and predicting charges using regression techniques.  
+        <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank" class="project-link" rel="noopener">View Project</a>
+      </li>
+      <li><strong>Mining Grocery Purchase Patterns:</strong>  
+        Discovering purchase patterns from grocery data using association rules mining on Kaggle.  
+        <a href="https://www.kaggle.com/code/samudralatejaswini/mining-grocery-purchase-patterns" target="_blank" class="project-link" rel="noopener">View Project</a>
+      </li>
+      <li><strong>Traffic Light PPO:</strong>  
+        GitHub repo for a traffic light control project using reinforcement learning PPO algorithm.  
+        <a href="https://github.com/Utdktud7k57/traffic-light-ppo" target="_blank" class="project-link" rel="noopener">View Project</a>
+      </li>
+    </ul>
   </div>
-</header>
+</div>
 
-<nav role="navigation" aria-label="Primary navigation">
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#hobbies">Hobbies</a>
-  <a href="#education">Education</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<main class="container">
-  <section id="about" tabindex="0" aria-label="About Me">
-    <h2>👋 About Me</h2>
-    <p>
-      Hi, I’m <strong>Tejaswini Samudrala</strong> — a postgraduate in <strong>Data Science and Artificial Intelligence</strong> from the <strong>University of Liverpool</strong>, driven by curiosity, creativity, and a passion for solving real-world problems through data.
-    </p>
-    <p>
-      I’ve worked on projects ranging from building an OCR system to improve accessibility to cancer biomarker discovery using unsupervised learning. I love turning complex datasets into meaningful insights and telling clear, compelling data stories.
-    </p>
-    <h3>What I Bring:</h3>
+<div class="accordion" role="region" aria-label="Skills section">
+  <button class="accordion-header" aria-expanded="false" aria-controls="skills-content" id="skills-header">
+    💡 Skills
+    <span class="icon">+</span>
+  </button>
+  <div id="skills-content" class="accordion-content" role="region" aria-labelledby="skills-header" hidden>
     <ul>
-      <li>Proficient in <strong>Python</strong>, <strong>SQL</strong>, <strong>Excel</strong>, <strong>Power BI</strong>, and <strong>Tableau</strong></li>
-      <li>Comfortable across the full data pipeline – from data wrangling to model building and dashboard creation</li>
-      <li>Experienced with tools/libraries like <strong>Pandas</strong>, <strong>NumPy</strong>, <strong>Scikit-learn</strong>, <strong>Matplotlib</strong>, <strong>Seaborn</strong>, and <strong>OpenCV</li>
-      <li>Solid foundation in machine learning – including classification, clustering, and predictive modeling</li>
-      <li>Skilled in simplifying technical concepts for non-technical stakeholders</li>
-    </ul>
-    <h3>What I’m Looking For:</h3>
-    <p>
-      I’m actively seeking full-time, internship, or freelance opportunities in:
-    </p>
-    <ul>
-      <li>Data Analytics</li>
-      <li>Business Intelligence</li>
+      <li>Python</li>
       <li>Machine Learning</li>
-      <li>Any space where data meets creativity and impact</li>
+      <li>Data Visualization</li>
+      <li>SQL</li>
+      <li>R Programming</li>
+      <li>Git & GitHub</li>
     </ul>
-  </section>
+  </div>
+</div>
 
-  <section id="projects" tabindex="0" aria-label="Projects">
-    <h2>📊 Projects</h2>
-    <ul>
-      <li>
-        <strong>Medical Cost Analysis and Charge Prediction:</strong> A Kaggle project analyzing medical costs and predicting charges using regression techniques.  
-        <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank" rel="noopener" class="project-link">View Project</a>
-      </li>
-      <li>
-        <strong>Mining Grocery Purchase Patterns:</strong> Discovering purchase patterns from grocery data using association rules mining on Kaggle.  
-        <a href="https://www.kaggle.com/code/samudralatejaswini/mining-grocery-purchase-patterns" target="_blank" rel="noopener" class="project-link">View Project</a>
-      </li>
-      <li>
-        <strong>Traffic Light PPO:</strong> GitHub repo for a traffic light control project using reinforcement learning PPO algorithm.  
-        <a href="https://github.com/Utdktud7k57/traffic-light-ppo" target="_blank" rel="noopener" class="project-link">View Project</a>
-      </li>
-    </ul>
-  </section>
-
-  <section id="skills" tabindex="0" aria-label="Skills">
-    <h2>💡 Skills</h2>
-    <div class="skill-list">
-      <div class="skill-item" tabindex="0">Python</div>
-      <div class="skill-item" tabindex="0">Machine Learning</div>
-      <div class="skill-item" tabindex="0">Data Visualization</div>
-      <div class="skill-item" tabindex="0">SQL</div>
-      <div class="skill-item" tabindex="0">R Programming</div>
-      <div class="skill-item" tabindex="0">Git & GitHub</div>
-    </div>
-  </section>
-
-  <section id="hobbies" tabindex="0" aria-label="Hobbies and Interests">
-    <h2>🌿 Hobbies & Interests</h2>
+<div class="accordion" role="region" aria-label="Hobbies and Interests section">
+  <button class="accordion-header" aria-expanded="false" aria-controls="hobbies-content" id="hobbies-header">
+    🌿 Hobbies & Interests
+    <span class="icon">+</span>
+  </button>
+  <div id="hobbies-content" class="accordion-content" role="region" aria-labelledby="hobbies-header" hidden>
     <p>📖 I enjoy reading stories and research articles, journaling my thoughts, and taking walks across the park to clear my mind.</p>
-  </section>
+  </div>
+</div>
 
-  <section id="education" tabindex="0" aria-label="Education">
-    <h2>🎓 Education</h2>
+<div class="accordion" role="region" aria-label="Education section">
+  <button class="accordion-header" aria-expanded="false" aria-controls="education-content" id="education-header">
+    🎓 Education
+    <span class="icon">+</span>
+  </button>
+  <div id="education-content" class="accordion-content" role="region" aria-labelledby="education-header" hidden>
     <ul>
       <li><strong>MSc</strong> in Data Science & AI – University of Liverpool</li>
       <li><strong>B.Tech</strong> in Electronics & Communication Engineering – JNTUH</li>
     </ul>
-  </section>
-
-  <section id="contact" tabindex="0" aria-label="Contact">
-    <h2>📬 Contact Me</h2>
-    <p>If you'd like to connect, feel free to email me directly:</p>
-    <p><strong>Email:</strong> <a href="mailto:samudralat77@gmail.com">samudralat77@gmail.com</a></p>
-  </section>
-</main>
-
-<footer>
-  &copy; 2025 Tejaswini Samudrala | Portfolio site built with ❤️ using GitHub Pages
-</footer>
+  </div>
+</div>
 
 <script>
-  // Fade in on scroll
-  document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-
-    sections.forEach(section => {
-      section.style.opacity = '0';
-      section.style.transform = 'translateY(20px)';
-      observer.observe(section);
+  // Accordion toggle logic
+  const headers = document.querySelectorAll('.accordion-header');
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const expanded = header.getAttribute('aria-expanded') === 'true';
+      header.setAttribute('aria-expanded', !expanded);
+      const content = document.getElementById(header.getAttribute('aria-controls'));
+      if (!expanded) {
+        content.hidden = false;
+      } else {
+        content.hidden = true;
+      }
     });
+  });
+
+  // Contact form submission (dummy)
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    alert(`Thanks, ${form.name.value}! Your message has been sent.`);
+    form.reset();
   });
 </script>
 
