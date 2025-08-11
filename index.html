@@ -3,486 +3,345 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tejaswini Samudrala Portfolio</title>
-
-<!-- Google Fonts: Poppins for modern vibe -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+<title>Tejaswini Samudrala – Portfolio</title>
 
 <style>
-  /* Reset & base */
+  /* Reset and base */
   * {
     margin: 0; padding: 0; box-sizing: border-box;
   }
   body {
-    font-family: 'Poppins', sans-serif;
-    background: #1E1F28;
-    color: #F0F0F5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fdfdfd;
+    color: #333;
     line-height: 1.6;
-    scroll-behavior: smooth;
   }
   a {
-    color: #FF6F61;
+    color: #d62828;
     text-decoration: none;
+    font-weight: bold;
     transition: color 0.3s ease;
   }
-  a:hover {
-    color: #FFB88C;
+  a:hover, a:focus {
+    color: #fcbf49;
+    outline: none;
   }
   /* Container */
   .container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: auto;
-    padding: 20px;
+    padding: 20px 15px;
   }
-  /* Header & Nav */
+  /* Sticky Header */
   header {
-    background: #2E2F3E;
     position: sticky;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    background: #003049;
+    color: white;
+    padding: 20px 15px 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 100;
   }
+  header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+  }
+  header p {
+    font-weight: 500;
+    font-size: 1.1rem;
+    opacity: 0.85;
+  }
+  header img {
+    display: block;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #fff;
+    margin: 15px auto 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  /* Navigation (below header) */
   nav {
+    background: #004b71;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
+    justify-content: center;
+    gap: 25px;
+    padding: 10px 0;
   }
-  nav .logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #FF6F61;
-  }
-  nav ul {
-    display: flex;
-    list-style: none;
-  }
-  nav ul li {
-    margin-left: 1.5rem;
-  }
-  nav ul li a {
+  nav a {
+    color: #fcbf49;
     font-weight: 600;
     font-size: 1rem;
-    letter-spacing: 0.05rem;
-  }
-  nav ul li a:hover {
-    color: #FFD2B7;
-  }
-  /* Hero Section */
-  #hero {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    padding: 3rem 1rem;
-    background: linear-gradient(135deg, #FF6F61 0%, #FFB88C 100%);
-    color: #1E1F28;
-    border-radius: 0 0 50% 50% / 10% 10% 20% 20%;
-    margin-bottom: 3rem;
-  }
-  #hero .hero-text {
-    flex: 1 1 300px;
-  }
-  #hero h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-  }
-  #hero p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-  }
-  #hero .btn {
-    background: #1E1F28;
-    color: #FFB88C;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    font-weight: 600;
-    cursor: pointer;
-    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
     transition: background 0.3s ease;
   }
-  #hero .btn:hover {
-    background: #FF6F61;
+  nav a:hover, nav a:focus {
+    background: #d62828;
     color: white;
+    outline: none;
   }
-  #hero .hero-photo {
-    flex: 1 1 250px;
+  /* Social Links */
+  .socials {
     text-align: center;
+    margin-bottom: 30px;
   }
-  #hero .hero-photo img {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid #1E1F28;
-    box-shadow: 0 0 15px 5px rgba(255,111,97,0.7);
+  .socials a {
+    margin: 0 15px;
+    font-size: 1.2rem;
   }
-  /* Section Titles */
+  /* Sections */
   section {
-    margin-bottom: 4rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 25px 25px 35px;
+    margin-bottom: 35px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation-fill-mode: forwards;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-out;
   }
-  section h2 {
-    font-size: 2.4rem;
-    color: #FF6F61;
-    margin-bottom: 1rem;
-    text-align: center;
-    letter-spacing: 2px;
+  /* Fade in sequence */
+  section:nth-of-type(1) { animation-name: fadeInUp; animation-delay: 0.15s; }
+  section:nth-of-type(2) { animation-name: fadeInUp; animation-delay: 0.35s; }
+  section:nth-of-type(3) { animation-name: fadeInUp; animation-delay: 0.55s; }
+  section:nth-of-type(4) { animation-name: fadeInUp; animation-delay: 0.75s; }
+  section:nth-of-type(5) { animation-name: fadeInUp; animation-delay: 0.95s; }
+  section:nth-of-type(6) { animation-name: fadeInUp; animation-delay: 1.15s; }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
-  section p.section-subtitle {
-    text-align: center;
-    font-weight: 300;
-    margin-bottom: 2rem;
-    color: #FFD2B7;
+
+  /* Section Titles */
+  h2 {
+    color: #003049;
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #fcbf49;
+    display: inline-block;
+    padding-bottom: 4px;
   }
-  /* About */
-  #about {
-    max-width: 700px;
-    margin: auto;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: #DDD;
-    line-height: 1.8;
+  /* Lists styling */
+  ul {
+    list-style: inside disc;
+    margin-top: 10px;
+    color: #444;
+  }
+  ul li {
+    margin-bottom: 7px;
+  }
+  /* About Me */
+  #about p, #about ul {
+    font-size: 1rem;
+    color: #444;
   }
   /* Projects */
-  #projects .project-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 1.8rem;
+  #projects ul, #education ul {
+    margin-top: 10px;
   }
-  .project-card {
-    background: #2E2F3E;
-    padding: 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(255,111,97,0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .project-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(255,111,97,0.6);
-  }
-  .project-card h3 {
-    margin-bottom: 0.8rem;
-    color: #FFB88C;
-  }
-  .project-card p {
-    flex-grow: 1;
-    margin-bottom: 1rem;
-    color: #DDD;
-  }
-  .project-card a.btn {
-    align-self: flex-start;
-    padding: 0.5rem 1rem;
-    background: #FF6F61;
-    border-radius: 25px;
-    font-weight: 600;
+  #projects a.project-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 7px 14px;
+    background: #d62828;
     color: white;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.3s ease;
   }
-  .project-card a.btn:hover {
-    background: #FFD2B7;
-    color: #1E1F28;
+  #projects a.project-link:hover, #projects a.project-link:focus {
+    background: #fcbf49;
+    color: #003049;
+    outline: none;
   }
-  /* Skills */
-  #skills .skills-list {
+  /* Skills Section */
+  #skills {
+    padding-top: 0;
+  }
+  .skill-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.8rem;
+    gap: 15px;
   }
   .skill-item {
-    background: #2E2F3E;
-    padding: 1rem 1.5rem;
-    border-radius: 20px;
-    box-shadow: 0 0 12px rgba(255,111,97,0.3);
+    flex: 1 1 130px;
+    background: #003049;
+    color: #fcbf49;
     font-weight: 600;
-    font-size: 1.1rem;
-    color: #FFB88C;
+    padding: 10px 15px;
+    border-radius: 7px;
+    text-align: center;
+    box-shadow: 0 0 12px rgba(246,192,73,0.7);
     transition: background 0.3s ease;
     cursor: default;
-    position: relative;
   }
-  .skill-item:hover {
-    background: #FF6F61;
+  .skill-item:hover, .skill-item:focus {
+    background: #d62828;
     color: white;
-    box-shadow: 0 0 20px #FF6F61;
-  }
-  /* Animated progress bars */
-  .progress-container {
-    width: 100%;
-    background: #444657;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-top: 0.5rem;
-  }
-  .progress-bar {
-    height: 10px;
-    background: #FF6F61;
-    width: 0;
-    transition: width 1.2s ease-in-out;
-    border-radius: 10px;
-  }
-  /* Resume */
-  #resume {
-    text-align: center;
-  }
-  #resume a.btn {
-    background: #FF6F61;
-    padding: 1rem 2rem;
-    border-radius: 40px;
-    color: white;
-    font-weight: 700;
-    font-size: 1.2rem;
-    display: inline-block;
-    box-shadow: 0 4px 15px rgba(255,111,97,0.5);
-    transition: background 0.3s ease;
-  }
-  #resume a.btn:hover {
-    background: #FFB88C;
-    color: #1E1F28;
-  }
-  /* Contact */
-  #contact form {
-    max-width: 600px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-  }
-  #contact label {
-    margin: 0.8rem 0 0.3rem;
-    font-weight: 600;
-    color: #FFD2B7;
-  }
-  #contact input, #contact textarea {
-    padding: 0.7rem 1rem;
-    border-radius: 8px;
-    border: none;
-    font-size: 1rem;
-    resize: vertical;
-  }
-  #contact input:focus, #contact textarea:focus {
     outline: none;
-    box-shadow: 0 0 6px #FF6F61;
-  }
-  #contact button {
-    margin-top: 1.5rem;
-    background: #FF6F61;
-    border: none;
-    padding: 1rem;
-    border-radius: 30px;
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  #contact button:hover {
-    background: #FFB88C;
-    color: #1E1F28;
+    box-shadow: 0 0 16px #d62828;
   }
   /* Hobbies */
-  #hobbies .hobby-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
-  }
-  .hobby-item {
-    background: #2E2F3E;
-    padding: 1rem 1.5rem;
-    border-radius: 15px;
-    font-weight: 600;
-    color: #FFD2B7;
-    box-shadow: 0 0 15px rgba(255,111,97,0.2);
-    cursor: default;
-    text-align: center;
-    width: 160px;
+  #hobbies p {
+    font-size: 1rem;
+    color: #444;
+    max-width: 600px;
+    margin: auto;
   }
   /* Footer */
   footer {
     text-align: center;
-    padding: 1rem;
+    padding: 15px 10px;
+    font-size: 0.9em;
     color: #555;
-    font-size: 0.9rem;
-    background: #1E1F28;
+    background: #f2f2f2;
   }
   /* Responsive */
-  @media(max-width: 768px) {
-    #hero {
+  @media (max-width: 650px) {
+    nav {
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .skill-list {
       flex-direction: column;
     }
-    #hero .hero-text {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    nav ul {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    nav ul li {
-      margin: 0.5rem 1rem;
+    .skill-item {
+      flex: 1 1 100%;
     }
   }
 </style>
+
 </head>
 <body>
 
 <header>
-  <nav class="container">
-    <div class="logo">Tejaswini S.</div>
-    <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#hobbies">Hobbies</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <h1>Tejaswini Samudrala</h1>
+  <p>Data Science & AI | Aspiring Analyst</p>
+  <img src="professional.jpg" alt="Tejaswini Samudrala photo" />
+  <div class="socials">
+    <a href="https://medium.com/@samudralat77" target="_blank" rel="noopener noreferrer" aria-label="Medium profile">📝 Medium</a>
+    <a href="https://www.linkedin.com/in/tejaswini-harshitha-samudrala/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">💼 LinkedIn</a>
+  </div>
 </header>
 
-<section id="hero" aria-label="Introduction">
-  <div class="hero-text">
-    <h1>Tejaswini Samudrala</h1>
-    <p>Data Science & AI Enthusiast | Problem Solver | Tech Explorer</p>
-    <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get in Touch</button>
-  </div>
-  <div class="hero-photo">
-    <img src="photo.jpg" alt="Photo of Tejaswini Samudrala" />
-  </div>
-</section>
+<nav role="navigation" aria-label="Primary navigation">
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#hobbies">Hobbies</a>
+  <a href="#education">Education</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-<section id="about" aria-label="About me">
-  <h2>About Me</h2>
-  <p>
-    Hi! I'm Tejaswini, a passionate Data Science and Artificial Intelligence postgraduate from the University of Liverpool. I love exploring data-driven solutions, building innovative projects, and continuously learning new technologies. Beyond tech, I enjoy reading, journaling, and peaceful walks in the park.
-  </p>
-</section>
+<main class="container">
+  <section id="about" tabindex="0" aria-label="About Me">
+    <h2>👋 About Me</h2>
+    <p>
+      Hi, I’m <strong>Tejaswini Samudrala</strong> — a postgraduate in <strong>Data Science and Artificial Intelligence</strong> from the <strong>University of Liverpool</strong>, driven by curiosity, creativity, and a passion for solving real-world problems through data.
+    </p>
+    <p>
+      I’ve worked on projects ranging from building an OCR system to improve accessibility to cancer biomarker discovery using unsupervised learning. I love turning complex datasets into meaningful insights and telling clear, compelling data stories.
+    </p>
+    <h3>What I Bring:</h3>
+    <ul>
+      <li>Proficient in <strong>Python</strong>, <strong>SQL</strong>, <strong>Excel</strong>, <strong>Power BI</strong>, and <strong>Tableau</strong></li>
+      <li>Comfortable across the full data pipeline – from data wrangling to model building and dashboard creation</li>
+      <li>Experienced with tools/libraries like <strong>Pandas</strong>, <strong>NumPy</strong>, <strong>Scikit-learn</strong>, <strong>Matplotlib</strong>, <strong>Seaborn</strong>, and <strong>OpenCV</strong></li>
+      <li>Solid foundation in machine learning – including classification, clustering, and predictive modeling</li>
+      <li>Skilled in simplifying technical concepts for non-technical stakeholders</li>
+    </ul>
+    <h3>What I’m Looking For:</h3>
+    <p>
+      I’m actively seeking full-time, internship, or freelance opportunities in:
+    </p>
+    <ul>
+      <li>Data Analytics</li>
+      <li>Business Intelligence</li>
+      <li>Machine Learning</li>
+      <li>Any space where data meets creativity and impact</li>
+    </ul>
+  </section>
 
-<section id="projects" aria-label="Projects">
-  <h2>Projects</h2>
-  <p class="section-subtitle">Some of my key works and analyses</p>
-  <div class="project-list">
-    <article class="project-card" tabindex="0">
-      <h3>Medical Cost Analysis and Charge Prediction</h3>
-      <p>A Kaggle project analyzing medical costs and predicting charges using regression techniques.</p>
-      <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank" rel="noopener" class="btn" aria-label="Open Medical Cost Analysis Kaggle project">View Project</a>
-    </article>
+  <section id="projects" tabindex="0" aria-label="Projects">
+    <h2>📊 Projects</h2>
+    <ul>
+      <li>
+        <strong>Medical Cost Analysis and Charge Prediction:</strong> A Kaggle project analyzing medical costs and predicting charges using regression techniques.  
+        <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank" rel="noopener" class="project-link">View Project</a>
+      </li>
+      <li>
+        <strong>Mining Grocery Purchase Patterns:</strong> Discovering purchase patterns from grocery data using association rules mining on Kaggle.  
+        <a href="https://www.kaggle.com/code/samudralatejaswini/mining-grocery-purchase-patterns" target="_blank" rel="noopener" class="project-link">View Project</a>
+      </li>
+      <li>
+        <strong>Traffic Light PPO:</strong> GitHub repo for a traffic light control project using reinforcement learning PPO algorithm.  
+        <a href="https://github.com/Utdktud7k57/traffic-light-ppo" target="_blank" rel="noopener" class="project-link">View Project</a>
+      </li>
+    </ul>
+  </section>
 
-    <article class="project-card" tabindex="0">
-      <h3>Mining Grocery Purchase Patterns</h3>
-      <p>Discovering purchase patterns from grocery data using association rules mining on Kaggle.</p>
-      <a href="https://www.kaggle.com/code/samudralatejaswini/mining-grocery-purchase-patterns" target="_blank" rel="noopener" class="btn" aria-label="Open Mining Grocery Purchase Patterns Kaggle project">View Project</a>
-    </article>
-
-    <article class="project-card" tabindex="0">
-      <h3>Traffic Light PPO</h3>
-      <p>GitHub repo for a traffic light control project using reinforcement learning PPO algorithm.</p>
-      <a href="https://github.com/Utdktud7k57/traffic-light-ppo" target="_blank" rel="noopener" class="btn" aria-label="Open Traffic Light PPO GitHub repository">View Project</a>
-    </article>
-  </div>
-</section>
-
-<section id="skills" aria-label="Skills">
-  <h2>Skills</h2>
-  <div class="skills-list" aria-label="List of skills">
-    <div class="skill-item" tabindex="0">
-      Python
-      <div class="progress-container" aria-hidden="true">
-        <div class="progress-bar" style="width: 85%;"></div>
-      </div>
+  <section id="skills" tabindex="0" aria-label="Skills">
+    <h2>💡 Skills</h2>
+    <div class="skill-list">
+      <div class="skill-item" tabindex="0">Python</div>
+      <div class="skill-item" tabindex="0">Machine Learning</div>
+      <div class="skill-item" tabindex="0">Data Visualization</div>
+      <div class="skill-item" tabindex="0">SQL</div>
+      <div class="skill-item" tabindex="0">R Programming</div>
+      <div class="skill-item" tabindex="0">Git & GitHub</div>
     </div>
-    <div class="skill-item" tabindex="0">
-      Machine Learning
-      <div class="progress-container" aria-hidden="true">
-        <div class="progress-bar" style="width: 80%;"></div>
-      </div>
-    </div>
-    <div class="skill-item" tabindex="0">
-      Data Visualization
-      <div class="progress-container" aria-hidden="true">
-        <div class="progress-bar" style="width: 75%;"></div>
-      </div>
-    </div>
-    <div class="skill-item" tabindex="0">
-      SQL
-      <div class="progress-container" aria-hidden="true">
-        <div class="progress-bar" style="width: 70%;"></div>
-      </div>
-    </div>
-    <div class="skill-item" tabindex="0">
-      R Programming
-      <div class="progress-container" aria-hidden="true">
-        <div class="progress-bar" style="width: 65%;"></div>
-      </div>
-    </div>
-    <div class="skill-item" tabindex="0">
-      Git & GitHub
-      <div class="progress-container" aria-hidden="true">
-        <div class="progress-bar" style="width: 90%;"></div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section id="hobbies" aria-label="Hobbies and Interests">
-  <h2>Hobbies & What I Do Besides Tech</h2>
-  <div class="hobby-list" aria-label="List of hobbies">
-    <div class="hobby-item" tabindex="0">Reading</div>
-    <div class="hobby-item" tabindex="0">Journaling</div>
-    <div class="hobby-item" tabindex="0">Walking in the Park</div>
-    <div class="hobby-item" tabindex="0">Crocheting</div>
-    <div class="hobby-item" tabindex="0">Cooking</div>
-  </div>
-</section>
+  <section id="hobbies" tabindex="0" aria-label="Hobbies and Interests">
+    <h2>🌿 Hobbies & Interests</h2>
+    <p>📖 I enjoy reading stories and research articles, journaling my thoughts, and taking walks across the park to clear my mind.</p>
+  </section>
 
-<section id="resume" aria-label="Resume">
-  <h2>Resume</h2>
-  <p class="section-subtitle">Download my full resume below</p>
-  <a href="Tejaswini_Samudrala_Resume.pdf" download class="btn" aria-label="Download Resume">Download Resume</a>
-</section>
+  <section id="education" tabindex="0" aria-label="Education">
+    <h2>🎓 Education</h2>
+    <ul>
+      <li><strong>MSc</strong> in Data Science & AI – University of Liverpool</li>
+      <li><strong>B.Tech</strong> in Electronics & Communication Engineering – JNTUH</li>
+    </ul>
+  </section>
 
-<section id="contact" aria-label="Contact Me">
-  <h2>Contact</h2>
-  <form action="mailto:your-email@example.com" method="POST" enctype="text/plain" aria-label="Contact form">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="Name" required placeholder="Your name" />
-
-    <label for="email">Email</label>
-    <input type="email" id="email" name="Email" required placeholder="your.email@example.com" />
-
-    <label for="message">Message</label>
-    <textarea id="message" name="Message" rows="5" required placeholder="Write your message here..."></textarea>
-
-    <button type="submit">Send</button>
-  </form>
-</section>
+  <section id="contact" tabindex="0" aria-label="Contact">
+    <h2>📬 Contact Me</h2>
+    <p>If you'd like to connect, feel free to email me directly:</p>
+    <p><strong>Email:</strong> <a href="mailto:samudralat77@gmail.com">samudralat77@gmail.com</a></p>
+  </section>
+</main>
 
 <footer>
-  &copy; 2025 Tejaswini Samudrala — Built with ❤️ and a splash of vibrant colors
+  &copy; 2025 Tejaswini Samudrala | Portfolio site built with ❤️ using GitHub Pages
 </footer>
 
 <script>
-  // Animate skill progress bars when they come into view
-  const progressBars = document.querySelectorAll('.progress-bar');
-  const options = { threshold: 0.5 };
-
-  function animateBars(entries, observer) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const bar = entry.target;
-        bar.style.width = bar.getAttribute('style').match(/width: ([0-9]+%)/)[1];
-        observer.unobserve(bar);
-      }
+  // Simple fade-in on scroll for sections (for browsers that support IntersectionObserver)
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section');
+    const options = { threshold: 0.15 };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+    sections.forEach(section => {
+      section.style.animationPlayState = 'paused';
+      observer.observe(section);
     });
-  }
-
-  const observer = new IntersectionObserver(animateBars, options);
-  progressBars.forEach(bar => {
-    bar.style.width = '0';
-    observer.observe(bar);
   });
-</script
+</script>
+
+</body>
+</html>
