@@ -1,290 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Tejaswini Samudrala – Portfolio</title>
-
-<style>
-  /* Reset */
-  * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #fdfdfd;
-    color: #333;
-    line-height: 1.6;
-    min-height: 100vh;
-    padding: 20px;
-    max-width: 800px;
-    margin: auto;
-  }
-  h1, h2 {
-    color: #003049;
-  }
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.2em;
-  }
-  h2 {
-    font-size: 1.5rem;
-    margin-bottom: 0.3em;
-  }
-  p {
-    font-size: 1rem;
-    margin-bottom: 1em;
-    color: #444;
-  }
-  img.profile-pic {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 3px solid #d62828;
-    object-fit: cover;
-    box-shadow: 0 3px 12px rgba(214, 40, 40, 0.4);
-    float: left;
-    margin-right: 20px;
-  }
-  /* Intro Section */
-  #intro {
-    margin-bottom: 30px;
-    border-bottom: 3px solid #fcbf49;
-    padding-bottom: 25px;
-  }
-  /* Accordion styles */
-  .accordion {
-    border-radius: 10px;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    background: white;
-    margin-bottom: 18px;
-    overflow: hidden;
-  }
-  .accordion-header {
-    background: #003049;
-    color: #fcbf49;
-    cursor: pointer;
-    padding: 15px 20px;
-    font-weight: 700;
-    font-size: 1.15rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    user-select: none;
-    border: none;
-    outline: none;
-    transition: background 0.3s ease;
-  }
-  .accordion-header:hover {
-    background: #d62828;
-    color: white;
-  }
-  .accordion-header:focus-visible {
-    outline: 3px solid #fcbf49;
-  }
-  .accordion-header .icon {
-    font-weight: 900;
-    font-size: 1.5rem;
-    line-height: 1;
-    transition: transform 0.3s ease;
-  }
-  .accordion-header[aria-expanded="true"] .icon {
-    transform: rotate(45deg);
-  }
-  .accordion-content {
-    padding: 20px 25px;
-    display: none;
-    animation: fadeInContent 0.4s ease forwards;
-    font-size: 1rem;
-    color: #444;
-  }
-  .accordion-content ul {
-    list-style: inside disc;
-    margin-top: 10px;
-  }
-  .accordion-content ul li {
-    margin-bottom: 7px;
-  }
-  @keyframes fadeInContent {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-  /* Contact form */
-  form {
-    margin-top: 20px;
-  }
-  label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 6px;
-  }
-  input[type="text"], input[type="email"], textarea {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1.5px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-family: inherit;
-    resize: vertical;
-    margin-bottom: 15px;
-    transition: border-color 0.3s ease;
-  }
-  input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
-    border-color: #d62828;
-    outline: none;
-  }
-  button {
-    background-color: #d62828;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    font-weight: 700;
-    font-size: 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  button:hover, button:focus {
-    background-color: #fcbf49;
-    color: #003049;
-    outline: none;
-  }
-  /* Clear float after intro */
-  #intro::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  /* Links in accordion */
-  a.project-link {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 6px 12px;
-    background: #d62828;
-    color: white;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  a.project-link:hover, a.project-link:focus {
-    background-color: #fcbf49;
-    color: #003049;
-  }
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tejaswini Samudrala | Portfolio</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- AOS Animation -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+    nav {
+      background-color: #0d1b2a;
+    }
+    nav a.nav-link {
+      color: white !important;
+    }
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://source.unsplash.com/1600x900/?technology,abstract') center/cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 20px;
+    }
+    section {
+      padding: 60px 0;
+    }
+    .project-card {
+      transition: transform 0.3s;
+    }
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+    footer {
+      background-color: #0d1b2a;
+      color: white;
+      padding: 20px 0;
+    }
+    .timeline {
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: #ccc;
+    }
+    .timeline-item {
+      padding: 20px;
+      position: relative;
+      width: 50%;
+    }
+    .timeline-item:nth-child(odd) {
+      left: 0;
+    }
+    .timeline-item:nth-child(even) {
+      left: 50%;
+    }
+  </style>
 </head>
 <body>
 
-<section id="intro" tabindex="0" aria-label="Introduction and About Me">
-  <img src="professional.jpg" alt="Photo of Tejaswini Samudrala" class="profile-pic" />
-  <h1>Hey, I’m Tejaswini Samudrala</h1>
-  <p>Postgraduate in Data Science and Artificial Intelligence from University of Liverpool.</p>
-  <p>I’m passionate about solving real-world problems through data and turning complex datasets into meaningful insights.</p>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand text-white fw-bold" href="#">Tejaswini</a>
+    <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <!-- Contact Form always visible here -->
-  <h2>📬 Send me a message</h2>
-  <form id="contactForm" aria-label="Contact form">
-    <label for="name">Your Name</label>
-    <input type="text" id="name" name="name" placeholder="Enter your name" required />
+<!-- Hero -->
+<header>
+  <div>
+    <img src="your-photo.jpg" alt="Profile Photo">
+    <h1 class="fw-bold" data-aos="fade-up">Tejaswini Samudrala</h1>
+    <p data-aos="fade-up" data-aos-delay="200">Data Science & AI Graduate | Analyst | Problem Solver</p>
+  </div>
+</header>
 
-    <label for="email">Your Email</label>
-    <input type="email" id="email" name="email" placeholder="Enter your email" required />
-
-    <label for="message">Message</label>
-    <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
-
-    <button type="submit">Send Message</button>
-  </form>
+<!-- About -->
+<section id="about" class="bg-light">
+  <div class="container" data-aos="fade-right">
+    <h2 class="text-center mb-4">About Me</h2>
+    <p class="lead text-center">I am a Data Science and Artificial Intelligence postgraduate from the University of Liverpool with hands-on experience in machine learning, data visualization, and statistical analysis. I enjoy solving real-world problems and creating insights from data.</p>
+  </div>
 </section>
 
-<!-- Accordion Sections -->
-<div class="accordion" role="region" aria-label="Projects section">
-  <button class="accordion-header" aria-expanded="false" aria-controls="projects-content" id="projects-header">
-    📊 Projects
-    <span class="icon">+</span>
-  </button>
-  <div id="projects-content" class="accordion-content" role="region" aria-labelledby="projects-header" hidden>
-    <ul>
-      <li><strong>Medical Cost Analysis and Charge Prediction:</strong>  
-        A Kaggle project analyzing medical costs and predicting charges using regression techniques.  
-        <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank" class="project-link" rel="noopener">View Project</a>
+<!-- Projects -->
+<section id="projects">
+  <div class="container" data-aos="fade-up">
+    <h2 class="text-center mb-4">Projects</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card project-card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Cancer Biomarker Discovery</h5>
+            <p class="card-text">Clustering algorithms applied to gene expression data to identify prognostic biomarkers.</p>
+            <a href="#" class="btn btn-outline-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card project-card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Bank Marketing Analysis</h5>
+            <p class="card-text">Classification model predicting client subscription likelihood from marketing data.</p>
+            <a href="#" class="btn btn-outline-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card project-card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Retail Sales Dashboard</h5>
+            <p class="card-text">Interactive Tableau dashboard for visualizing sales performance trends.</p>
+            <a href="#" class="btn btn-outline-primary">View Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section id="experience" class="bg-light">
+  <div class="container" data-aos="fade-left">
+    <h2 class="text-center mb-4">Experience</h2>
+    <ul class="timeline list-unstyled">
+      <li class="timeline-item">
+        <h5>Brand Representative - Abercrombie & Fitch</h5>
+        <small>Dec 2024 - Present</small>
+        <p>Delivering exceptional customer service and representing the brand values.</p>
       </li>
-      <li><strong>Mining Grocery Purchase Patterns:</strong>  
-        Discovering purchase patterns from grocery data using association rules mining on Kaggle.  
-        <a href="https://www.kaggle.com/code/samudralatejaswini/mining-grocery-purchase-patterns" target="_blank" class="project-link" rel="noopener">View Project</a>
+      <li class="timeline-item">
+        <h5>Data Science & AI Postgraduate - University of Liverpool</h5>
+        <small>2023 - 2024</small>
+        <p>Completed advanced coursework and projects in AI, ML, and data visualization.</p>
       </li>
-      <li><strong>Traffic Light PPO:</strong>  
-        GitHub repo for a traffic light control project using reinforcement learning PPO algorithm.  
-        <a href="https://github.com/Utdktud7k57/traffic-light-ppo" target="_blank" class="project-link" rel="noopener">View Project</a>
+      <li class="timeline-item">
+        <h5>Warehouse Operative - Evri</h5>
+        <small>Nov 2023 - Dec 2023</small>
+        <p>Managed incoming/outgoing parcels ensuring timely processing and delivery.</p>
       </li>
     </ul>
   </div>
-</div>
+</section>
 
-<div class="accordion" role="region" aria-label="Skills section">
-  <button class="accordion-header" aria-expanded="false" aria-controls="skills-content" id="skills-header">
-    💡 Skills
-    <span class="icon">+</span>
-  </button>
-  <div id="skills-content" class="accordion-content" role="region" aria-labelledby="skills-header" hidden>
-    <ul>
-      <li>Python</li>
-      <li>Machine Learning</li>
-      <li>Data Visualization</li>
-      <li>SQL</li>
-      <li>R Programming</li>
-      <li>Git & GitHub</li>
-    </ul>
+<!-- Contact -->
+<section id="contact">
+  <div class="container text-center" data-aos="fade-up">
+    <h2 class="mb-4">Get in Touch</h2>
+    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    <div>
+      <a href="https://www.linkedin.com/in/yourprofile" class="me-3 text-dark"><i class="fab fa-linkedin fa-2x"></i></a>
+      <a href="https://github.com/yourusername" class="me-3 text-dark"><i class="fab fa-github fa-2x"></i></a>
+      <a href="https://medium.com/@yourusername" class="text-dark"><i class="fab fa-medium fa-2x"></i></a>
+    </div>
   </div>
-</div>
+</section>
 
-<div class="accordion" role="region" aria-label="Hobbies and Interests section">
-  <button class="accordion-header" aria-expanded="false" aria-controls="hobbies-content" id="hobbies-header">
-    🌿 Hobbies & Interests
-    <span class="icon">+</span>
-  </button>
-  <div id="hobbies-content" class="accordion-content" role="region" aria-labelledby="hobbies-header" hidden>
-    <p>📖 I enjoy reading stories and research articles, journaling my thoughts, and taking walks across the park to clear my mind.</p>
-  </div>
-</div>
+<!-- Footer -->
+<footer class="text-center">
+  <p>© 2025 Tejaswini Samudrala | Built with ❤️ and GitHub Pages</p>
+</footer>
 
-<div class="accordion" role="region" aria-label="Education section">
-  <button class="accordion-header" aria-expanded="false" aria-controls="education-content" id="education-header">
-    🎓 Education
-    <span class="icon">+</span>
-  </button>
-  <div id="education-content" class="accordion-content" role="region" aria-labelledby="education-header" hidden>
-    <ul>
-      <li><strong>MSc</strong> in Data Science & AI – University of Liverpool</li>
-      <li><strong>B.Tech</strong> in Electronics & Communication Engineering – JNTUH</li>
-    </ul>
-  </div>
-</div>
-
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-  // Accordion toggle logic
-  const headers = document.querySelectorAll('.accordion-header');
-  headers.forEach(header => {
-    header.addEventListener('click', () => {
-      const expanded = header.getAttribute('aria-expanded') === 'true';
-      header.setAttribute('aria-expanded', !expanded);
-      const content = document.getElementById(header.getAttribute('aria-controls'));
-      if (!expanded) {
-        content.hidden = false;
-      } else {
-        content.hidden = true;
-      }
-    });
-  });
-
-  // Contact form submission (dummy)
-  const form = document.getElementById('contactForm');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    alert(`Thanks, ${form.name.value}! Your message has been sent.`);
-    form.reset();
-  });
+  AOS.init();
 </script>
 
 </body>
