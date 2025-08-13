@@ -157,7 +157,7 @@ section {
 .flip-card {
   background-color: transparent;
   width: 100%;
-  height: 250px;
+  height: 270px;
   perspective: 1000px;
   margin-bottom: 30px;
 }
@@ -196,12 +196,13 @@ section {
   text-align: center;
 }
 .flip-card-back {
-  background-color: var(--accent3);
-  color: var(--text-color);
-  transform: rotateY(180deg);
-  overflow-y: auto;
-  font-size: 0.95rem;
-  line-height: 1.5;
+    background-color: var(--accent3);
+    color: var(--text-color);
+    transform: rotateY(180deg);
+    overflow-y: auto; /* keep this for scrolling if needed */
+    font-size: 0.95rem;
+    line-height: 1.5;
+    padding-top: 10px; /* add some top padding */
 }
 
 /* Footer */
@@ -342,7 +343,7 @@ footer {
       </div>
     </div>
     <div class="text-center mt-4">
-      <a href="RESUME_DA_2025.pdf" download class="btn btn-custom btn-lg">Download Resume</a>
+      <a href="RESUME-DA-2025.pdf" download class="btn btn-custom btn-lg">Download Resume</a>
     </div>
   </div>
 </section>
