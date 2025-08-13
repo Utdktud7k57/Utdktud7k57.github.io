@@ -17,25 +17,29 @@
 <style>
 /* Color Palette */
 :root {
-  --dark-brown: #2B1A17;
+  --dark-bg: #09122C;
+  --accent1: #872341;
+  --accent2: #BE3144;
+  --accent3: #E17564;
   --cream: #F5F1E9;
   --bright-yellow: #FFD700;
+  --text-color: #F5F1E9;
 }
 
 body {
   font-family: 'Segoe UI', sans-serif;
   scroll-behavior: smooth;
   background: var(--cream);
-  color: var(--dark-brown);
+  color: var(--dark-bg);
   padding-top: 80px;
 }
 
 /* Navbar */
 nav {
-  background: var(--dark-brown);
+  background: var(--dark-bg);
 }
 nav a.nav-link {
-  color: var(--cream) !important;
+  color: var(--text-color) !important;
 }
 
 /* Hero Section */
@@ -52,29 +56,34 @@ header {
 }
 .hero-text h1 {
   font-weight: bold;
-  color: var(--dark-brown);
+  color: var(--dark-bg);
 }
 .hero-text p {
   font-size: 1.2rem;
   margin-bottom: 20px;
 }
+.hero-img {
+  background: var(--dark-bg);
+  padding: 20px;
+  border-radius: 10px;
+}
 .hero-img img {
   width: 100%;
   max-width: 400px;
   object-fit: cover;
-  filter: brightness(0.95);
   border-radius: 10px;
 }
 
 /* Buttons */
 .btn-custom {
-  background: var(--bright-yellow);
-  color: var(--dark-brown);
+  background: var(--accent1);
+  color: var(--text-color);
   font-weight: bold;
   border: none;
 }
 .btn-custom:hover {
   opacity: 0.85;
+  background: var(--accent2);
 }
 
 /* Section Titles */
@@ -84,7 +93,7 @@ section {
 .section-title {
   margin-bottom: 40px;
   font-weight: bold;
-  color: var(--dark-brown);
+  color: var(--dark-bg);
   text-align: center;
 }
 
@@ -133,7 +142,7 @@ section {
   top: 20px;
   width: 15px;
   height: 15px;
-  background: var(--dark-brown);
+  background: var(--dark-bg);
   border-radius: 50%;
   border: 3px solid var(--bright-yellow);
 }
@@ -148,7 +157,7 @@ section {
 .flip-card {
   background-color: transparent;
   width: 100%;
-  height: 200px;
+  height: 250px;
   perspective: 1000px;
   margin-bottom: 30px;
 }
@@ -156,7 +165,7 @@ section {
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
+  text-align: left;
   transition: transform 0.6s;
   transform-style: preserve-3d;
   cursor: pointer;
@@ -173,27 +182,32 @@ section {
   border-radius: 10px;
   padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 .flip-card-front {
-  background-color: var(--dark-brown);
-  color: var(--bright-yellow);
+  background-color: var(--accent1);
+  color: var(--text-color);
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 .flip-card-back {
-  background-color: var(--cream);
-  color: var(--dark-brown);
+  background-color: var(--accent3);
+  color: var(--text-color);
   transform: rotateY(180deg);
-  text-align: left;
   overflow-y: auto;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 /* Footer */
 footer {
-  background: var(--dark-brown);
-  color: var(--cream);
+  background: var(--dark-bg);
+  color: var(--text-color);
   padding: 20px 0;
   text-align: center;
 }
@@ -212,7 +226,8 @@ footer {
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#more">More</a></li>
+        <li class="nav-item"><a class="nav-link" href="#more">More About Me</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Work Experience</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -223,15 +238,14 @@ footer {
 <header>
   <div class="hero-text" data-aos="fade-right">
     <h1>Hello! I’m Tejaswini</h1>
-    <p>Welcome to my portfolio! I’m a Data Science & AI postgraduate passionate about solving real-world problems with data.</p>
-    <a href="RESUME_DA_2025.pdf" download class="btn btn-custom me-2">Download Resume</a>
-    <a href="https://github.com/Utdktud7k57" target="_blank" class="btn btn-outline-dark me-2"><i class="fab fa-github"></i> GitHub</a>
-    <a href="https://www.linkedin.com/in/tejaswini-harshitha-samudrala/" target="_blank" class="btn btn-outline-dark me-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
-    <a href="https://medium.com/@samudralat77" target="_blank" class="btn btn-outline-dark me-2"><i class="fab fa-medium"></i> Medium</a>
-    <a href="https://www.kaggle.com/samudralatejaswini" target="_blank" class="btn btn-outline-dark me-2"><i class="fab fa-kaggle"></i> Kaggle</a>
+    <p>Welcome to my portfolio! I’m a Data Science & AI postgraduate passionate about transforming data into actionable insights.</p>
+    <a href="https://github.com/Utdktud7k57" target="_blank" class="btn btn-custom me-2"><i class="fab fa-github"></i> GitHub</a>
+    <a href="https://www.linkedin.com/in/tejaswini-harshitha-samudrala/" target="_blank" class="btn btn-custom me-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://medium.com/@samudralat77" target="_blank" class="btn btn-custom me-2"><i class="fab fa-medium"></i> Medium</a>
+    <a href="https://www.kaggle.com/samudralatejaswini" target="_blank" class="btn btn-custom me-2"><i class="fab fa-kaggle"></i> Kaggle</a>
   </div>
   <div class="hero-img" data-aos="fade-left">
-    <img src="professional.jpg" alt="Tejaswini">
+    <img src="professional.jpeg" alt="Tejaswini">
   </div>
 </header>
 
@@ -239,12 +253,12 @@ footer {
 <section id="about">
   <div class="container" data-aos="fade-up">
     <h2 class="section-title">About Me</h2>
-    <p class="text-center">I am a Data Science and AI graduate with hands-on experience in machine learning, statistical analysis, and data visualization. I enjoy transforming data into actionable insights and real-world solutions.</p>
+    <p class="text-center">I am a Data Science and AI graduate with hands-on experience in machine learning, statistical analysis, and data visualization. I enjoy solving complex problems and presenting insights in a meaningful, accessible way.</p>
   </div>
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="bg-light">
+<section id="projects">
   <div class="container" data-aos="fade-up">
     <h2 class="section-title">Projects</h2>
     <div class="row g-4">
@@ -252,7 +266,7 @@ footer {
         <div class="card project-card">
           <div class="card-body">
             <h5 class="card-title">Traffic Light PPO</h5>
-            <p>Reinforcement learning controlling traffic lights for optimal flow.</p>
+            <p>Reinforcement learning model controlling traffic lights for optimal flow efficiency.</p>
             <a href="https://github.com/Utdktud7k57/traffic-light-ppo" target="_blank" class="btn btn-custom btn-sm">View Project</a>
           </div>
         </div>
@@ -261,7 +275,7 @@ footer {
         <div class="card project-card">
           <div class="card-body">
             <h5 class="card-title">Medical Cost Analysis</h5>
-            <p>Predicting medical costs using machine learning models.</p>
+            <p>Predicting medical costs and charges using machine learning techniques and data visualization.</p>
             <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank" class="btn btn-custom btn-sm">View Project</a>
           </div>
         </div>
@@ -270,7 +284,7 @@ footer {
         <div class="card project-card">
           <div class="card-body">
             <h5 class="card-title">Grocery Purchase Patterns</h5>
-            <p>Mining frequent purchase patterns from grocery datasets.</p>
+            <p>Analyzing grocery data to extract frequent purchase patterns using association rules.</p>
             <a href="https://www.kaggle.com/code/samudralatejaswini/mining-grocery-purchase-patterns" target="_blank" class="btn btn-custom btn-sm">View Project</a>
           </div>
         </div>
@@ -293,51 +307,42 @@ footer {
   <div class="container" data-aos="fade-up">
     <h2 class="section-title">More About Me</h2>
     <div class="row g-4">
+      <!-- Certifications -->
       <div class="col-md-4">
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">Certifications</div>
             <div class="flip-card-back">
-              <ul>
-                <li>Microsoft Azure Fundamentals — Microsoft (April 2025)</li>
-                <li>Google Data Analytics Professional — Coursera (July 2023)</li>
-                <li>Advanced Microsoft Excel — Udemy (Nov 2023)</li>
-                <li>IBM Introduction to Data Science — edX (Apr 2021)</li>
-              </ul>
+              <p>I have gained several professional certifications that strengthen my technical expertise and analytical skills. These include Microsoft Azure Fundamentals, Google Data Analytics Professional Certificate, Advanced Microsoft Excel, and IBM Introduction to Data Science. Each certification has equipped me with practical knowledge to apply in real-world data projects.</p>
             </div>
           </div>
         </div>
       </div>
+      <!-- Education -->
       <div class="col-md-4">
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">Education</div>
             <div class="flip-card-back">
-              <h5>Master of Science – Data Science & AI</h5>
-              <small>University of Liverpool, UK | Graduating: July 2025</small>
-              <p>Relevant Courses: Machine Learning, Data Mining & Visualisation, Applied AI, Computational Intelligence.</p>
-              <h5>Bachelor of Technology – Electronics & Communication Engineering</h5>
-              <small>Jawaharlal Nehru Technological University, India | Graduated: Sep 2022</small>
+              <p>I am completing my Master of Science in Data Science & AI at the University of Liverpool (Graduating July 2025), covering courses like Machine Learning, Data Mining & Visualisation, Applied AI, and Computational Intelligence. Previously, I earned a Bachelor of Technology in Electronics & Communication Engineering from Jawaharlal Nehru Technological University, India, in 2022. My education has given me a solid foundation in both technical and analytical skills.</p>
             </div>
           </div>
         </div>
       </div>
+      <!-- Extracurricular -->
       <div class="col-md-4">
         <div class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">Extracurricular</div>
             <div class="flip-card-back">
-              <ul>
-                <li>Medium, Writer – Publish articles on data analysis, AI, and technology.</li>
-                <li>Member, Competitive Programming Society – Engage in algorithmic problem-solving and coding challenges.</li>
-                <li>Volunteer, Crosby Beach Cleanup – Contributed to environmental conservation efforts.</li>
-                <li>Delegate, Youth Speak Forum (AIESEC) – Involved in discussions on young people's contributions to SDGs.</li>
-                <li>Counsellor, Voice for Girls Campaign – Guided students on critical topics like health, safety, and self-awareness.</li>
-              </ul>
+              <p>Beyond academics, I actively engage in extracurricular activities including writing articles on Medium about data analysis and AI, participating in competitive programming challenges, volunteering for environmental initiatives like the Crosby Beach Cleanup, representing youth perspectives in AIESEC forums, and mentoring students through the Voice for Girls Campaign.</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="text-center mt-4">
+      <a href="RESUME_DA_2025.pdf" download class="btn btn-custom btn-lg">Download Resume</a>
     </div>
   </div>
 </section>
@@ -349,31 +354,19 @@ footer {
     <div class="timeline">
       <div class="timeline-item left">
         <h5>Digital Intelligence – PwC Job Simulation (Feb 2025)</h5>
-        <ul>
-          <li>Collaborated with doctors to analyse adverse drug effects using FAERS database.</li>
-          <li>Comparative analysis of Tramal vs Lyrica using SQL and R; found 20% higher dizziness with Tramal.</li>
-        </ul>
+        <p>Collaborated with a network of doctors to analyse adverse drug effects using the FDA Adverse Event Reporting System (FAERS) database. Performed comparative analysis of Tramal and Lyrica adverse effects using SQL and R, uncovering a 20% higher incidence of dizziness with Tramal.</p>
       </div>
       <div class="timeline-item right">
         <h5>Network Engineer Intern – CSS Corp, India (Mar 2022)</h5>
-        <ul>
-          <li>Trained in troubleshooting, routing, IP addressing; improved network reliability by 20%.</li>
-          <li>Optimized network architecture using GNS3; latency reduced from 120ms to 90ms.</li>
-        </ul>
+        <p>Trained in troubleshooting, routing, IP addressing, and subnetting, expanding network reliability by 20% and minimizing downtime. Formulated and implemented an optimized network architecture using GNS3, refining user performance by streamlining data flow and reducing latency from 120ms to 90ms.</p>
       </div>
       <div class="timeline-item left">
         <h5>Brand Representative – Abercrombie & Fitch, Liverpool, UK (Dec 2024)</h5>
-        <ul>
-          <li>Delivered exceptional customer service; satisfaction improved from 19% to 25%.</li>
-          <li>Managed inventory and store presentation for smooth operations.</li>
-        </ul>
+        <p>Delivered exceptional customer service, enhancing client satisfaction from 19% to 25%. Managed inventory levels, organized product displays, and maintained store presentation for smooth daily operations.</p>
       </div>
       <div class="timeline-item right">
         <h5>Junior Manager – AIESEC Hyderabad, India (Jan 2022)</h5>
-        <ul>
-          <li>Coached 18 individuals for global volunteering opportunities.</li>
-          <li>Coordinated team activities, workshops, and project planning.</li>
-        </ul>
+        <p>Coached 18 individuals in securing global volunteering opportunities. Enhanced leadership and organizational skills by coordinating team activities, facilitating workshops, and supporting project planning.</p>
       </div>
     </div>
   </div>
@@ -400,4 +393,3 @@ AOS.init();
 </script>
 </body>
 </html>
-
