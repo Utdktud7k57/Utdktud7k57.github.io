@@ -15,11 +15,11 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
 <style>
-/* Color Scheme */
+/* Color Palette */
 :root {
-  --dark-brown: #4B2E2E;
+  --dark-brown: #2B1A17;
   --cream: #F5F1E9;
-  --yellow: #FFD166;
+  --bright-yellow: #FFD700;
 }
 
 body {
@@ -27,6 +27,7 @@ body {
   scroll-behavior: smooth;
   background: var(--cream);
   color: var(--dark-brown);
+  padding-top: 80px;
 }
 
 /* Navbar */
@@ -62,6 +63,18 @@ header {
   max-width: 400px;
   object-fit: cover;
   filter: brightness(0.95);
+  border-radius: 10px;
+}
+
+/* Buttons */
+.btn-custom {
+  background: var(--bright-yellow);
+  color: var(--dark-brown);
+  font-weight: bold;
+  border: none;
+}
+.btn-custom:hover {
+  opacity: 0.85;
 }
 
 /* Section Titles */
@@ -84,63 +97,97 @@ section {
   box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
-/* Buttons */
-.section-btns {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.section-btns button {
-  margin: 5px;
-  background: var(--yellow);
-  color: var(--dark-brown);
-  border: none;
-  padding: 10px 20px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.section-btns button:hover {
-  opacity: 0.85;
-}
-
-/* Card content */
-.card-content {
-  display: none;
-  background: var(--cream);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-}
-
 /* Work Experience Timeline */
 .timeline {
   position: relative;
-  margin: 20px 0;
-  padding-left: 30px;
+  margin: 40px 0;
+  padding: 0;
 }
 .timeline::before {
   content: '';
   position: absolute;
-  left: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  background: var(--bright-yellow);
   top: 0;
   bottom: 0;
-  width: 4px;
-  background: var(--yellow);
 }
 .timeline-item {
   position: relative;
-  margin-bottom: 30px;
-  padding-left: 20px;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
 }
 .timeline-item::before {
   content: '';
   position: absolute;
-  left: -1px;
-  top: 0;
-  width: 12px;
-  height: 12px;
+  top: 20px;
+  width: 15px;
+  height: 15px;
   background: var(--dark-brown);
   border-radius: 50%;
+  border: 3px solid var(--bright-yellow);
+}
+.timeline-item.left::before {
+  right: -8px;
+}
+.timeline-item.right::before {
+  left: -8px;
+}
+
+/* Flip Cards */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 200px;
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flip-card-front {
+  background-color: var(--dark-brown);
+  color: var(--bright-yellow);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.flip-card-back {
+  background-color: var(--cream);
+  color: var(--dark-brown);
+  transform: rotateY(180deg);
+  text-align: left;
+  overflow-y: auto;
 }
 
 /* Footer */
@@ -165,7 +212,7 @@ footer {
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#sections">More</a></li>
+        <li class="nav-item"><a class="nav-link" href="#more">More</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -177,9 +224,11 @@ footer {
   <div class="hero-text" data-aos="fade-right">
     <h1>Hello! I’m Tejaswini</h1>
     <p>Welcome to my portfolio! I’m a Data Science & AI postgraduate passionate about solving real-world problems with data.</p>
-    <a href="RESUME_DA_2025.pdf" download class="btn btn-warning me-2">Download Resume</a>
+    <a href="RESUME_DA_2025.pdf" download class="btn btn-custom me-2">Download Resume</a>
     <a href="https://github.com/Utdktud7k57" target="_blank" class="btn btn-outline-dark me-2"><i class="fab fa-github"></i> GitHub</a>
     <a href="https://www.linkedin.com/in/tejaswini-harshitha-samudrala/" target="_blank" class="btn btn-outline-dark me-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
+    <a href="https://medium.com/@samudralat77" target="_blank" class="btn btn-outline-dark me-2"><i class="fab fa-medium"></i> Medium</a>
+    <a href="https://www.kaggle.com/samudralatejaswini" target="_blank" class="btn btn-outline-dark me-2"><i class="fab fa-kaggle"></i> Kaggle</a>
   </div>
   <div class="hero-img" data-aos="fade-left">
     <img src="professional.jpg" alt="Tejaswini">
@@ -204,7 +253,7 @@ footer {
           <div class="card-body">
             <h5 class="card-title">Traffic Light PPO</h5>
             <p>Reinforcement learning controlling traffic lights for optimal flow.</p>
-            <a href="https://github.com/Utdktud7k57/traffic-light-ppo" target="_blank" class="btn btn-warning btn-sm">View Project</a>
+            <a href="https://github.com/Utdktud7k57/traffic-light-ppo" target="_blank" class="btn btn-custom btn-sm">View Project</a>
           </div>
         </div>
       </div>
@@ -213,7 +262,7 @@ footer {
           <div class="card-body">
             <h5 class="card-title">Medical Cost Analysis</h5>
             <p>Predicting medical costs using machine learning models.</p>
-            <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank" class="btn btn-warning btn-sm">View Project</a>
+            <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank" class="btn btn-custom btn-sm">View Project</a>
           </div>
         </div>
       </div>
@@ -222,7 +271,7 @@ footer {
           <div class="card-body">
             <h5 class="card-title">Grocery Purchase Patterns</h5>
             <p>Mining frequent purchase patterns from grocery datasets.</p>
-            <a href="https://www.kaggle.com/code/samudralatejaswini/mining-grocery-purchase-patterns" target="_blank" class="btn btn-warning btn-sm">View Project</a>
+            <a href="https://www.kaggle.com/code/samudralatejaswini/mining-grocery-purchase-patterns" target="_blank" class="btn btn-custom btn-sm">View Project</a>
           </div>
         </div>
       </div>
@@ -231,7 +280,7 @@ footer {
           <div class="card-body">
             <h5 class="card-title">Master's Dissertation</h5>
             <p>Discovering Prognostic Biomarkers in Cancer.</p>
-            <a href="DISCOVERY%20OF%20POTENT%20PROGNOSTIC.docx" download class="btn btn-warning btn-sm">Download Dissertation</a>
+            <a href="DISCOVERY%20OF%20POTENT%20PROGNOSTIC.docx" download class="btn btn-custom btn-sm">Download Dissertation</a>
           </div>
         </div>
       </div>
@@ -239,77 +288,93 @@ footer {
   </div>
 </section>
 
-<!-- Interactive Sections -->
-<section id="sections">
+<!-- More About Me Flip Cards -->
+<section id="more">
   <div class="container" data-aos="fade-up">
     <h2 class="section-title">More About Me</h2>
-    <div class="section-btns">
-      <button onclick="toggleSection('certifications')">Certifications</button>
-      <button onclick="toggleSection('education')">Education</button>
-      <button onclick="toggleSection('extracurricular')">Extracurricular</button>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">Certifications</div>
+            <div class="flip-card-back">
+              <ul>
+                <li>Microsoft Azure Fundamentals — Microsoft (April 2025)</li>
+                <li>Google Data Analytics Professional — Coursera (July 2023)</li>
+                <li>Advanced Microsoft Excel — Udemy (Nov 2023)</li>
+                <li>IBM Introduction to Data Science — edX (Apr 2021)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">Education</div>
+            <div class="flip-card-back">
+              <h5>Master of Science – Data Science & AI</h5>
+              <small>University of Liverpool, UK | Graduating: July 2025</small>
+              <p>Relevant Courses: Machine Learning, Data Mining & Visualisation, Applied AI, Computational Intelligence.</p>
+              <h5>Bachelor of Technology – Electronics & Communication Engineering</h5>
+              <small>Jawaharlal Nehru Technological University, India | Graduated: Sep 2022</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">Extracurricular</div>
+            <div class="flip-card-back">
+              <ul>
+                <li>Medium, Writer – Publish articles on data analysis, AI, and technology.</li>
+                <li>Member, Competitive Programming Society – Engage in algorithmic problem-solving and coding challenges.</li>
+                <li>Volunteer, Crosby Beach Cleanup – Contributed to environmental conservation efforts.</li>
+                <li>Delegate, Youth Speak Forum (AIESEC) – Involved in discussions on young people's contributions to SDGs.</li>
+                <li>Counsellor, Voice for Girls Campaign – Guided students on critical topics like health, safety, and self-awareness.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- Work Experience Timeline -->
-    <div id="experience" class="timeline" data-aos="fade-up">
-      <h3 class="text-center mb-4">Work Experience</h3>
-      <div class="timeline-item">
+<!-- Work Experience Timeline -->
+<section id="experience">
+  <div class="container" data-aos="fade-up">
+    <h2 class="section-title text-center">Work Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item left">
         <h5>Digital Intelligence – PwC Job Simulation (Feb 2025)</h5>
         <ul>
-          <li>Collaborated with a network of doctors to analyse adverse drug effects using FAERS database.</li>
+          <li>Collaborated with doctors to analyse adverse drug effects using FAERS database.</li>
           <li>Comparative analysis of Tramal vs Lyrica using SQL and R; found 20% higher dizziness with Tramal.</li>
         </ul>
       </div>
-      <div class="timeline-item">
+      <div class="timeline-item right">
         <h5>Network Engineer Intern – CSS Corp, India (Mar 2022)</h5>
         <ul>
           <li>Trained in troubleshooting, routing, IP addressing; improved network reliability by 20%.</li>
           <li>Optimized network architecture using GNS3; latency reduced from 120ms to 90ms.</li>
         </ul>
       </div>
-      <div class="timeline-item">
+      <div class="timeline-item left">
         <h5>Brand Representative – Abercrombie & Fitch, Liverpool, UK (Dec 2024)</h5>
         <ul>
           <li>Delivered exceptional customer service; satisfaction improved from 19% to 25%.</li>
           <li>Managed inventory and store presentation for smooth operations.</li>
         </ul>
       </div>
-      <div class="timeline-item">
+      <div class="timeline-item right">
         <h5>Junior Manager – AIESEC Hyderabad, India (Jan 2022)</h5>
         <ul>
           <li>Coached 18 individuals for global volunteering opportunities.</li>
           <li>Coordinated team activities, workshops, and project planning.</li>
         </ul>
       </div>
-    </div>
-
-    <!-- Certifications -->
-    <div id="certifications" class="card-content">
-      <ul>
-        <li>Microsoft Azure Fundamentals — Microsoft (April 2025)</li>
-        <li>Google Data Analytics Professional — Coursera (July 2023)</li>
-        <li>Advanced Microsoft Excel — Udemy (Nov 2023)</li>
-        <li>IBM Introduction to Data Science — edX (Apr 2021)</li>
-      </ul>
-    </div>
-
-    <!-- Education -->
-    <div id="education" class="card-content">
-      <h5>Master of Science – Data Science & AI</h5>
-      <small>University of Liverpool, UK | Graduating: July 2025</small>
-      <p>Relevant Courses: Machine Learning, Data Mining & Visualisation, Applied AI, Computational Intelligence.</p>
-      <h5>Bachelor of Technology – Electronics & Communication Engineering</h5>
-      <small>Jawaharlal Nehru Technological University, India | Graduated: Sep 2022</small>
-    </div>
-
-    <!-- Extracurricular -->
-    <div id="extracurricular" class="card-content">
-      <ul>
-        <li>Medium, Writer – Publish articles on data analysis, AI, and technology.</li>
-        <li>Member, Competitive Programming Society – Engage in algorithmic problem-solving and coding challenges.</li>
-        <li>Volunteer, Crosby Beach Cleanup – Contributed to environmental conservation efforts.</li>
-        <li>Delegate, Youth Speak Forum (AIESEC) – Involved in discussions on young people's contributions to SDGs.</li>
-        <li>Counsellor, Voice for Girls Campaign – Guided students on critical topics like health, safety, and self-awareness.</li>
-      </ul>
     </div>
   </div>
 </section>
@@ -332,14 +397,7 @@ footer {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
 AOS.init();
-
-// Toggle interactive sections
-function toggleSection(id) {
-  const section = document.getElementById(id);
-  const allSections = document.querySelectorAll('.card-content');
-  allSections.forEach(s => { if(s.id !== id) s.style.display='none'; });
-  section.style.display = section.style.display === 'block' ? 'none' : 'block';
-}
 </script>
 </body>
 </html>
+
