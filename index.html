@@ -15,90 +15,67 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
 <style>
+/* Color Scheme */
+:root {
+  --dark-brown: #4B2E2E;
+  --cream: #F5F1E9;
+  --yellow: #FFD166;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   scroll-behavior: smooth;
-  background: #f0f4f8;
-  color: #333;
+  background: var(--cream);
+  color: var(--dark-brown);
 }
 
 /* Navbar */
 nav {
-  background: linear-gradient(90deg, #36d1dc, #5b86e5);
+  background: var(--dark-brown);
 }
 nav a.nav-link {
-  color: white !important;
+  color: var(--cream) !important;
 }
 
-/* Hero */
+/* Hero Section */
 header {
-  height: 90vh;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-  padding: 0 5%;
+  justify-content: space-between;
+  padding: 80px 5%;
+  background: var(--cream);
 }
 .hero-text {
   max-width: 50%;
 }
 .hero-text h1 {
   font-weight: bold;
-  color: #2c3e50;
+  color: var(--dark-brown);
 }
 .hero-text p {
   font-size: 1.2rem;
-  color: #34495e;
   margin-bottom: 20px;
-}
-.hero-img {
-  max-width: 40%;
 }
 .hero-img img {
   width: 100%;
-  border-radius: 50%;
-  border: 4px solid white;
+  max-width: 400px;
   object-fit: cover;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  filter: brightness(0.95);
 }
 
-/* Sections */
+/* Section Titles */
 section {
   padding: 60px 0;
 }
 .section-title {
   margin-bottom: 40px;
   font-weight: bold;
-  color: #5b86e5;
+  color: var(--dark-brown);
   text-align: center;
 }
 
-/* Interactive Buttons for Sections */
-.section-btns {
-  text-align: center;
-  margin-bottom: 40px;
-}
-.section-btns button {
-  margin: 5px;
-  background: linear-gradient(90deg, #36d1dc, #5b86e5);
-  color: white;
-  border: none;
-}
-.section-btns button:hover {
-  opacity: 0.9;
-}
-
-/* Card-style content for expandable sections */
-.card-content {
-  display: none;
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-  line-height: 1.5;
-}
-
-/* Projects */
+/* Projects Cards */
 .project-card {
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -108,20 +85,70 @@ section {
 }
 
 /* Buttons */
-.btn-gradient {
-  background: linear-gradient(90deg, #36d1dc, #5b86e5);
-  color: white;
-  border: none;
+.section-btns {
+  text-align: center;
+  margin-bottom: 40px;
 }
-.btn-gradient:hover {
-  opacity: 0.9;
+.section-btns button {
+  margin: 5px;
+  background: var(--yellow);
+  color: var(--dark-brown);
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.section-btns button:hover {
+  opacity: 0.85;
+}
+
+/* Card content */
+.card-content {
+  display: none;
+  background: var(--cream);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+/* Work Experience Timeline */
+.timeline {
+  position: relative;
+  margin: 20px 0;
+  padding-left: 30px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--yellow);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  background: var(--dark-brown);
+  border-radius: 50%;
 }
 
 /* Footer */
 footer {
-  background: linear-gradient(90deg, #36d1dc, #5b86e5);
-  color: white;
+  background: var(--dark-brown);
+  color: var(--cream);
   padding: 20px 0;
+  text-align: center;
 }
 </style>
 </head>
@@ -138,7 +165,7 @@ footer {
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#sections">Sections</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sections">More</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -150,7 +177,7 @@ footer {
   <div class="hero-text" data-aos="fade-right">
     <h1>Hello! I’m Tejaswini</h1>
     <p>Welcome to my portfolio! I’m a Data Science & AI postgraduate passionate about solving real-world problems with data.</p>
-    <a href="RESUME_DA_2025.pdf" download class="btn btn-gradient me-2">Download Resume</a>
+    <a href="RESUME_DA_2025.pdf" download class="btn btn-warning me-2">Download Resume</a>
     <a href="https://github.com/Utdktud7k57" target="_blank" class="btn btn-outline-dark me-2"><i class="fab fa-github"></i> GitHub</a>
     <a href="https://www.linkedin.com/in/tejaswini-harshitha-samudrala/" target="_blank" class="btn btn-outline-dark me-2"><i class="fab fa-linkedin"></i> LinkedIn</a>
   </div>
@@ -177,7 +204,7 @@ footer {
           <div class="card-body">
             <h5 class="card-title">Traffic Light PPO</h5>
             <p>Reinforcement learning controlling traffic lights for optimal flow.</p>
-            <a href="https://github.com/Utdktud7k57/traffic-light-ppo" target="_blank" class="btn btn-gradient btn-sm">View Project</a>
+            <a href="https://github.com/Utdktud7k57/traffic-light-ppo" target="_blank" class="btn btn-warning btn-sm">View Project</a>
           </div>
         </div>
       </div>
@@ -186,7 +213,7 @@ footer {
           <div class="card-body">
             <h5 class="card-title">Medical Cost Analysis</h5>
             <p>Predicting medical costs using machine learning models.</p>
-            <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank" class="btn btn-gradient btn-sm">View Project</a>
+            <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank" class="btn btn-warning btn-sm">View Project</a>
           </div>
         </div>
       </div>
@@ -195,7 +222,7 @@ footer {
           <div class="card-body">
             <h5 class="card-title">Grocery Purchase Patterns</h5>
             <p>Mining frequent purchase patterns from grocery datasets.</p>
-            <a href="https://www.kaggle.com/code/samudralatejaswini/mining-grocery-purchase-patterns" target="_blank" class="btn btn-gradient btn-sm">View Project</a>
+            <a href="https://www.kaggle.com/code/samudralatejaswini/mining-grocery-purchase-patterns" target="_blank" class="btn btn-warning btn-sm">View Project</a>
           </div>
         </div>
       </div>
@@ -204,7 +231,7 @@ footer {
           <div class="card-body">
             <h5 class="card-title">Master's Dissertation</h5>
             <p>Discovering Prognostic Biomarkers in Cancer.</p>
-            <a href="DISCOVERY%20OF%20POTENT%20PROGNOSTIC.docx" download class="btn btn-gradient btn-sm">Download Dissertation</a>
+            <a href="DISCOVERY%20OF%20POTENT%20PROGNOSTIC.docx" download class="btn btn-warning btn-sm">Download Dissertation</a>
           </div>
         </div>
       </div>
@@ -212,39 +239,47 @@ footer {
   </div>
 </section>
 
-<!-- Interactive Sections Buttons -->
+<!-- Interactive Sections -->
 <section id="sections">
   <div class="container" data-aos="fade-up">
     <h2 class="section-title">More About Me</h2>
     <div class="section-btns">
-      <button class="btn" onclick="toggleSection('experience')">Work Experience</button>
-      <button class="btn" onclick="toggleSection('certifications')">Certifications</button>
-      <button class="btn" onclick="toggleSection('education')">Education</button>
-      <button class="btn" onclick="toggleSection('extracurricular')">Extracurricular</button>
+      <button onclick="toggleSection('certifications')">Certifications</button>
+      <button onclick="toggleSection('education')">Education</button>
+      <button onclick="toggleSection('extracurricular')">Extracurricular</button>
     </div>
 
-    <!-- Work Experience -->
-    <div id="experience" class="card-content">
-      <h5>Digital Intelligence – PwC Job Simulation (Feb 2025)</h5>
-      <ul>
-        <li>Collaborated with a network of doctors to analyse adverse drug effects using FAERS database.</li>
-        <li>Comparative analysis of Tramal vs Lyrica using SQL and R; found 20% higher dizziness with Tramal.</li>
-      </ul>
-      <h5>Network Engineer Intern – CSS Corp, India (Mar 2022)</h5>
-      <ul>
-        <li>Trained in troubleshooting, routing, IP addressing; improved network reliability by 20%.</li>
-        <li>Optimized network architecture using GNS3; latency reduced from 120ms to 90ms.</li>
-      </ul>
-      <h5>Brand Representative – Abercrombie & Fitch, Liverpool, UK (Dec 2024)</h5>
-      <ul>
-        <li>Delivered exceptional customer service; satisfaction improved from 19% to 25%.</li>
-        <li>Managed inventory and store presentation for smooth operations.</li>
-      </ul>
-      <h5>Junior Manager – AIESEC Hyderabad, India (Jan 2022)</h5>
-      <ul>
-        <li>Coached 18 individuals for global volunteering opportunities.</li>
-        <li>Coordinated team activities, workshops, and project planning.</li>
-      </ul>
+    <!-- Work Experience Timeline -->
+    <div id="experience" class="timeline" data-aos="fade-up">
+      <h3 class="text-center mb-4">Work Experience</h3>
+      <div class="timeline-item">
+        <h5>Digital Intelligence – PwC Job Simulation (Feb 2025)</h5>
+        <ul>
+          <li>Collaborated with a network of doctors to analyse adverse drug effects using FAERS database.</li>
+          <li>Comparative analysis of Tramal vs Lyrica using SQL and R; found 20% higher dizziness with Tramal.</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <h5>Network Engineer Intern – CSS Corp, India (Mar 2022)</h5>
+        <ul>
+          <li>Trained in troubleshooting, routing, IP addressing; improved network reliability by 20%.</li>
+          <li>Optimized network architecture using GNS3; latency reduced from 120ms to 90ms.</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <h5>Brand Representative – Abercrombie & Fitch, Liverpool, UK (Dec 2024)</h5>
+        <ul>
+          <li>Delivered exceptional customer service; satisfaction improved from 19% to 25%.</li>
+          <li>Managed inventory and store presentation for smooth operations.</li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <h5>Junior Manager – AIESEC Hyderabad, India (Jan 2022)</h5>
+        <ul>
+          <li>Coached 18 individuals for global volunteering opportunities.</li>
+          <li>Coordinated team activities, workshops, and project planning.</li>
+        </ul>
+      </div>
     </div>
 
     <!-- Certifications -->
@@ -283,13 +318,12 @@ footer {
 <section id="contact" class="bg-light">
   <div class="container text-center" data-aos="fade-up">
     <h2 class="section-title">Contact Me</h2>
-    <p>Click below to email me directly:</p>
-    <a href="mailto:samudralat77@gmail.com?subject=Portfolio%20Contact&body=Hi%20Tejaswini," class="btn btn-gradient">Email Me</a>
+    <p>Email me at <strong>samudralat77@gmail.com</strong></p>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="text-center">
+<footer>
   <p>© 2025 Tejaswini Samudrala | Built with ❤️ on GitHub Pages</p>
 </footer>
 
