@@ -19,13 +19,13 @@ body {
   font-family: 'Segoe UI', sans-serif;
   scroll-behavior: smooth;
   background: #f5f5f5;
+  color: #333;
 }
 
 /* Navbar */
 nav {
   background: linear-gradient(90deg, #4facfe, #00f2fe);
 }
-
 nav a.nav-link {
   color: white !important;
 }
@@ -41,7 +41,6 @@ header {
   color: white;
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://source.unsplash.com/1600x900/?technology,abstract') center/cover no-repeat;
 }
-
 header img {
   width: 150px;
   height: 150px;
@@ -53,6 +52,11 @@ header img {
 /* Sections */
 section {
   padding: 60px 0;
+}
+.section-title {
+  margin-bottom: 40px;
+  font-weight: bold;
+  color: #4facfe;
 }
 
 /* Project Cards */
@@ -115,6 +119,12 @@ footer {
 .btn-gradient:hover {
   opacity: 0.9;
 }
+
+/* Lists */
+ul.cert-list, ul.extra-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
 </style>
 </head>
 <body>
@@ -130,7 +140,10 @@ footer {
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#experience">Work Experience</a></li>
+        <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#extracurricular">Extracurricular</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
@@ -155,7 +168,7 @@ footer {
     <h1 class="fw-bold" data-aos="fade-up">Tejaswini Samudrala</h1>
     <p class="lead" data-aos="fade-up" data-aos-delay="200">Data Science & AI Graduate | Analyst | Problem Solver</p>
     <div class="mt-3" data-aos="fade-up" data-aos-delay="400">
-      <a href="RESUME_DA_2025.pdf" class="btn btn-gradient me-2" download>Download Resume</a>
+      <a href="RESUME_DA_2025.pdf" download class="btn btn-gradient me-2">Download Resume</a>
       <a href="https://github.com/Utdktud7k57" class="btn btn-outline-light me-2" target="_blank"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/tejaswini-harshitha-samudrala/" class="btn btn-outline-light me-2" target="_blank"><i class="fab fa-linkedin"></i></a>
       <a href="https://medium.com/@samudralat77" class="btn btn-outline-light me-2" target="_blank"><i class="fab fa-medium"></i></a>
@@ -167,7 +180,7 @@ footer {
 <!-- About Me -->
 <section id="about" class="bg-light">
   <div class="container" data-aos="fade-right">
-    <h2 class="text-center mb-4">About Me</h2>
+    <h2 class="section-title text-center">About Me</h2>
     <p class="lead text-center">
       I am a Data Science and Artificial Intelligence postgraduate from the University of Liverpool, 
       with hands-on experience in machine learning, statistical analysis, and data visualization. 
@@ -179,7 +192,7 @@ footer {
 <!-- Projects -->
 <section id="projects">
   <div class="container" data-aos="fade-up">
-    <h2 class="text-center mb-4">Projects</h2>
+    <h2 class="section-title text-center">Projects</h2>
     <div class="row g-4">
 
       <!-- Project 1 -->
@@ -221,7 +234,7 @@ footer {
           <div class="card-body">
             <h5 class="card-title">Master's Dissertation</h5>
             <p class="card-text">Discovering Prognostic Biomarkers in Cancer using clustering algorithms and gene expression data.</p>
-            <a href="RESUME_DA_2025.pdf" class="btn btn-gradient" download>Download Dissertation</a>
+            <a href="DISCOVERY%20OF%20POTENT%20PROGNOSTIC.docx" download class="btn btn-gradient">Download Dissertation</a>
           </div>
         </div>
       </div>
@@ -230,34 +243,89 @@ footer {
   </div>
 </section>
 
-<!-- Experience -->
+<!-- Work Experience -->
 <section id="experience" class="bg-light">
   <div class="container" data-aos="fade-left">
-    <h2 class="text-center mb-4">Experience</h2>
+    <h2 class="section-title text-center">Work Experience</h2>
+
     <ul class="timeline list-unstyled">
       <li class="timeline-item">
-        <h5>Brand Representative - Abercrombie & Fitch</h5>
-        <small>Dec 2024 - Present</small>
-        <p>Delivering exceptional customer service and representing the brand values.</p>
+        <h5>Digital Intelligence – PwC Job Simulation</h5>
+        <small>February 2025</small>
+        <p>• Collaborated with a network of doctors to analyse adverse drug effects using the FDA Adverse Event Reporting System (FAERS) database, identifying key patterns in drug-related side effects and frequency across over 10,000 patient records.<br>
+           • Performed comparative analysis of Tramal and Lyrica adverse effects using SQL and R, uncovering a 20% higher incidence of dizziness with Tramal.</p>
       </li>
       <li class="timeline-item">
-        <h5>Data Science & AI Postgraduate - University of Liverpool</h5>
-        <small>2023 - 2024</small>
-        <p>Completed advanced coursework and projects in AI, ML, and data visualization.</p>
+        <h5>Network Engineer Intern – CSS Corp, India</h5>
+        <small>March 2022</small>
+        <p>• Trained in troubleshooting, routing, IP addressing, and subnetting, expanding network reliability by 20%, and minimizing downtime.<br>
+           • Formulated and implemented an optimized network architecture using GNS3, refining user performance by streamlining data flow and trimming latency from 120ms to 90ms.</p>
       </li>
       <li class="timeline-item">
-        <h5>Warehouse Operative - Evri</h5>
-        <small>Nov 2023 - Dec 2023</small>
-        <p>Managed incoming/outgoing parcels ensuring timely processing and delivery.</p>
+        <h5>Brand Representative – Abercrombie & Fitch, Liverpool, UK</h5>
+        <small>December 2024</small>
+        <p>• Delivered exceptional customer service, enhancing client satisfaction from 19% to 25%.<br>
+           • Managed inventory levels, organised product displays, and maintained store presentation for smooth day-to-day operations.</p>
+      </li>
+      <li class="timeline-item">
+        <h5>Junior Manager – AIESEC Hyderabad, India</h5>
+        <small>January 2022</small>
+        <p>• Coached 18 individuals in securing global volunteering opportunities.<br>
+           • Enhanced leadership and organisational skills by coordinating team activities, facilitating workshops, and supporting project planning.</p>
       </li>
     </ul>
   </div>
 </section>
 
+<!-- Certifications -->
+<section id="certifications">
+  <div class="container" data-aos="fade-up">
+    <h2 class="section-title text-center">Certifications</h2>
+    <ul class="cert-list">
+      <li>Microsoft Azure Fundamentals — Microsoft (April 2025)</li>
+      <li>Google Data Analytics Professional — Coursera (July 2023)</li>
+      <li>Advanced Microsoft Excel — Udemy (November 2023)</li>
+      <li>IBM Introduction to Data Science — edX (April 2021)</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="bg-light">
+  <div class="container" data-aos="fade-right">
+    <h2 class="section-title text-center">Education</h2>
+    <ul class="list-unstyled">
+      <li>
+        <h5>Master of Science – Data Science & AI</h5>
+        <small>University of Liverpool, UK | Graduating: July 2025</small>
+        <p>Relevant Courses: Machine Learning, Data Mining & Visualisation, Applied AI, Computational Intelligence.</p>
+      </li>
+      <li>
+        <h5>Bachelor of Technology – Electronics & Communication Engineering</h5>
+        <small>Jawaharlal Nehru Technological University, India | Graduated: September 2022</small>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- Extracurricular Activities -->
+<section id="extracurricular">
+  <div class="container" data-aos="fade-up">
+    <h2 class="section-title text-center">Extracurricular Activities</h2>
+    <ul class="extra-list">
+      <li>Medium, Writer – Publish articles on data analysis, AI, and technology.</li>
+      <li>Member, Competitive Programming Society – Engage in algorithmic problem-solving and coding challenges.</li>
+      <li>Volunteer, Crosby Beach Cleanup – Contributed to environmental conservation efforts.</li>
+      <li>Delegate, Youth Speak Forum (AIESEC) – Involved in discussions on young people's contributions to the SDGs.</li>
+      <li>Counsellor, Voice for Girls Campaign – Guided students on critical topics like health, safety, and self-awareness.</li>
+    </ul>
+  </div>
+</section>
+
 <!-- Contact -->
-<section id="contact">
+<section id="contact" class="bg-light">
   <div class="container text-center" data-aos="fade-up">
-    <h2 class="mb-4">Get in Touch</h2>
+    <h2 class="section-title">Get in Touch</h2>
     <form action="https://formspree.io/f/mrgvdkly" method="POST" class="mx-auto" style="max-width: 500px;">
       <div class="mb-3">
         <input type="text" class="form-control" name="name" placeholder="Your Name" required>
