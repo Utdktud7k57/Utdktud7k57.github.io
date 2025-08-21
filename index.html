@@ -293,141 +293,154 @@ footer {
 </section>
 
 <!-- Projects Section -->
-<section id="projects" style="padding: 60px 0;">
-  <div class="container" data-aos="fade-up">
-    <h2 class="section-title text-center mb-5">Projects</h2>
-
-    <!-- Academic Projects -->
-    <h3 class="sub-title mb-4" style="border-bottom: 2px solid #007BFF; padding-bottom: 5px;">Academic Projects</h3>
-    <div class="row g-4">
-
-      <!-- Master’s Project 1 -->
-      <div class="col-md-6">
-        <div class="card project-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Discovering Prognostic Biomarkers in Cancer</h5>
-            <p class="card-text">
-              Applied clustering algorithms to high-dimensional gene expression data to uncover potential prognostic biomarkers in cancer. 
-              Compared K-Means, Hierarchical Clustering, and DBSCAN, with visualizations bridging computational results and biological interpretation.
-            </p>
-            <a href="files/MSc_Dissertation.pdf" download class="btn btn-custom btn-sm">Download Report</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Master’s Project 2 -->
-      <div class="col-md-6">
-        <div class="card project-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Distinguishing Fraudulent Reviews from Genuine Ones</h5>
-            <p class="card-text">
-              Literature review exploring detection methods for fake online reviews. Compared content-based NLP and ML techniques with network-based graph methods, highlighting that hybrid approaches can improve accuracy.
-            </p>
-            <a href="files/FakeReview_LitReview.pdf" download class="btn btn-custom btn-sm">Download Review</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bachelor’s Project 1 -->
-      <div class="col-md-4">
-        <div class="card project-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Safe and Cost-Effective Massage Band</h5>
-            <p class="card-text">
-              Designed a low-cost wearable massage band using air compression to relieve muscle and joint pain. Controlled via mobile app, powered by Arduino and rechargeable battery.
-            </p>
-            <a href="files/MassageBand.pdf" download class="btn btn-custom btn-sm">Download Report</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bachelor’s Project 2 -->
-      <div class="col-md-4">
-        <div class="card project-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Script Voice – Document Reader</h5>
-            <p class="card-text">
-              Assistive device for visually impaired individuals. Uses Raspberry Pi, OCR, and text-to-speech synthesis to convert scanned text into audio output.
-            </p>
-            <a href="files/ScriptVoice.pdf" download class="btn btn-custom btn-sm">Download Report</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bachelor’s Project 3 -->
-      <div class="col-md-4">
-        <div class="card project-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Radio Frequency Light Sources – Seminar</h5>
-            <p class="card-text">
-              Technical seminar on RF lamps that operate without electrodes. Reviewed advances in semiconductor switching and RF plasma, with applications and real-world examples.
-            </p>
-            <a href="files/RF_LightSources.pdf" download class="btn btn-custom btn-sm">Download Report</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Other / Online Projects -->
-    <h3 class="sub-title mt-5 mb-4" style="border-bottom: 2px solid #28A745; padding-bottom: 5px;">Other / Online Projects</h3>
-    <div class="row g-4">
-
-      <!-- Online Project 1 -->
-      <div class="col-md-4">
-        <div class="card project-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Traffic Light PPO</h5>
-            <p class="card-text">
-              Reinforcement learning project applying Proximal Policy Optimization (PPO) to optimize traffic light control. Includes visualizations of queue lengths, vehicle flow, and agent actions.
-            </p>
-            <a href="https://github.com/Utdktud7k57/traffic-light-ppo" target="_blank" class="btn btn-custom btn-sm">View on GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Online Project 2 -->
-      <div class="col-md-4">
-        <div class="card project-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Bank Marketing ML Project</h5>
-            <p class="card-text">
-              ML analysis on Bank Marketing dataset to predict subscription to term deposits. Covers data preprocessing, visualizations, and model comparisons for actionable insights.
-            </p>
-            <a href="https://www.kaggle.com/code/samudralatejaswini/bank-marketing-ml-project-who-will-subscribe" target="_blank" class="btn btn-custom btn-sm">View on Kaggle</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Online Project 3 -->
-      <div class="col-md-4">
-        <div class="card project-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Medical Cost Analysis</h5>
-            <p class="card-text">
-              Predictive modeling project analyzing healthcare insurance data to estimate medical charges. Regression models evaluate demographic and lifestyle factors impacting costs.
-            </p>
-            <a href="https://www.kaggle.com/code/samudralatejaswini/medical-cost-analysis-and-charge-prediction" target="_blank" class="btn btn-custom btn-sm">View on Kaggle</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Online Project 4 -->
-      <div class="col-md-4">
-        <div class="card project-card h-100">
-          <div class="card-body">
-            <h5 class="card-title">Mining Grocery Patterns</h5>
-            <p class="card-text">
-              Association rule mining on transaction data to identify frequent itemsets and purchase patterns. Insights support marketing strategies such as product bundling and store layout optimization.
-            </p>
-            <a href="https://www.kaggle.com/code/samudralatejaswini/mining-grocery-purchase-patterns" target="_blank" class="btn btn-custom btn-sm">View on Kaggle</a>
-          </div>
-        </div>
-      </div>
-
+<section id="projects" class="py-5">
+  <div class="container text-center">
+    <h2 class="section-title mb-4">Projects</h2>
+    <div class="d-flex justify-content-center gap-3">
+      <button class="btn project-btn" onclick="openModal('academic')">Academic Projects</button>
+      <button class="btn project-btn" onclick="openModal('other')">Other Projects</button>
     </div>
   </div>
 </section>
+
+<!-- Custom Popup Modal -->
+<div id="projectModal" class="custom-modal">
+  <div class="custom-modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    
+    <!-- Tabs -->
+    <div class="tab-buttons">
+      <button class="tab-link" onclick="openTab(event,'academicTab')">Academic Projects</button>
+      <button class="tab-link" onclick="openTab(event,'otherTab')">Other Projects</button>
+    </div>
+
+    <!-- Academic Projects -->
+    <div id="academicTab" class="tab-content">
+      <h3>Academic Projects</h3>
+      <ul>
+        <li><b>Discovering Prognostic Biomarkers in Cancer</b> – Applied clustering algorithms on gene expression data.</li>
+        <li><b>Bank Marketing Prediction</b> – Classification task on customer subscription data.</li>
+      </ul>
+    </div>
+
+    <!-- Other Projects -->
+    <div id="otherTab" class="tab-content">
+      <h3>Other Projects</h3>
+      <ul>
+        <li><b>Traffic Light PPO</b> – Reinforcement learning model for traffic optimization.</li>
+        <li><b>Retail Data Analysis</b> – Insights and dashboards from transactional data.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Buttons */
+.project-btn {
+  background: #6c63ff;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 12px 25px;
+  border-radius: 30px;
+  border: none;
+  transition: all 0.3s ease;
+}
+.project-btn:hover {
+  background: #5145cd;
+  transform: translateY(-2px);
+}
+
+/* Modal base */
+.custom-modal {
+  display: none;
+  position: fixed;
+  z-index: 1050;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+.custom-modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 700px;
+  position: relative;
+  animation: slideUp 0.4s ease;
+}
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Tabs */
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.tab-link {
+  background: #e0e0e0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.tab-link:hover, .tab-link.active {
+  background: #6c63ff;
+  color: #fff;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0;} to {opacity: 1;}
+}
+@keyframes slideUp {
+  from {transform: translateY(50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+</style>
+
+<script>
+function openModal(tab) {
+  document.getElementById("projectModal").style.display = "flex";
+  if(tab === 'academic') {
+    openTab(null, 'academicTab');
+    document.querySelector(".tab-buttons button:first-child").classList.add("active");
+  } else {
+    openTab(null, 'otherTab');
+    document.querySelector(".tab-buttons button:last-child").classList.add("active");
+  }
+}
+
+function closeModal() {
+  document.getElementById("projectModal").style.display = "none";
+  document.querySelectorAll(".tab-link").forEach(btn => btn.classList.remove("active"));
+}
+
+function openTab(evt, tabId) {
+  document.querySelectorAll(".tab-content").forEach(tc => tc.classList.remove("active"));
+  document.querySelectorAll(".tab-link").forEach(btn => btn.classList.remove("active"));
+  document.getElementById(tabId).classList.add("active");
+  if(evt) evt.currentTarget.classList.add("active");
+}
+</script>
+
 
 
 
