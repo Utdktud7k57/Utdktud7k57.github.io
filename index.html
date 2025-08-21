@@ -300,8 +300,7 @@ footer {
 
     <!-- Online Projects -->
    
-    <h3 class="sub-title mt-5">some of my work </h3>
-    <div class="row g-4">
+  
 
       <!-- Online Project 1 -->
       <div class="col-md-4">
@@ -359,85 +358,86 @@ footer {
 <!-- Resume Download Button -->
   
 <div class="d-flex justify-content-center mt-3">
-  <a href="resume.pdf" class="btn btn-primary me-2" target="_blank">Download Resume</a>
-  <a href="#academic-projects" class="btn btn-primary">Academic Projects</a>
+  <a href="RESUME_DA_2.pdf" class="btn btn-primary me-2" target="_blank">Download Resume</a>
+  <button class="btn btn-primary" type="button" 
+          data-bs-toggle="collapse" data-bs-target="#academicProjects" 
+          aria-expanded="false" aria-controls="academicProjects">
+    Academic Projects
+  </button>
 </div>
 
+<!-- Academic Projects - Collapsible -->
+<div class="collapse mt-4" id="academicProjects">
+  <div class="row g-4 mt-2">
 
-    <!-- Academic Projects - Collapsible -->
-    <h4 class="mt-4">
-      <a class="btn btn-custom" data-bs-toggle="collapse" href="#academicProjects" role="button" aria-expanded="false" aria-controls="academicProjects">
-        Academic Projects
-      </a>
-    </h4>
-    <div class="collapse" id="academicProjects">
-      <div class="row g-4 mt-2">
-        <div class="col-md-6">
-        <div class="card project-card">
-          <div class="card-body">
-            <h5 class="card-title">Discovering Prognostic Biomarkers in Cancer</h5>
-            <p>
-              Applied clustering algorithms to high-dimensional gene expression data to uncover potential prognostic biomarkers in cancer. 
-              Compared K-Means, Hierarchical Clustering, and DBSCAN, with visualizations bridging computational results and biological interpretation.
-            </p>
-            <a href="files/MSc_Dissertation.pdf" download class="btn btn-custom btn-sm">Download Report</a>
-          </div>
+    <!-- Master’s Project 1 -->
+    <div class="col-md-6">
+      <div class="card project-card">
+        <div class="card-body">
+          <h5 class="card-title">Discovering Prognostic Biomarkers in Cancer</h5>
+          <p>
+            Applied clustering algorithms to high-dimensional gene expression data to uncover potential prognostic biomarkers in cancer. 
+            Compared K-Means, Hierarchical Clustering, and DBSCAN, with visualizations bridging computational results and biological interpretation.
+          </p>
+          <a href="files/MSc_Dissertation.pdf" download class="btn btn-custom btn-sm">Download Report</a>
         </div>
       </div>
+    </div>
 
-      <!-- Master’s Project 2 -->
-      <div class="col-md-6">
-        <div class="card project-card">
-          <div class="card-body">
-            <h5 class="card-title">Distinguishing Fraudulent Reviews from Genuine Ones</h5>
-            <p>
-              Literature review exploring detection methods for fake online reviews. Compared content-based NLP and ML techniques with network-based graph methods, highlighting that hybrid approaches can improve accuracy.
-            </p>
-            <a href="files/FakeReview_LitReview.pdf" download class="btn btn-custom btn-sm">Download Review</a>
-          </div>
+    <!-- Master’s Project 2 -->
+    <div class="col-md-6">
+      <div class="card project-card">
+        <div class="card-body">
+          <h5 class="card-title">Distinguishing Fraudulent Reviews from Genuine Ones</h5>
+          <p>
+            Literature review exploring detection methods for fake online reviews. Compared content-based NLP and ML techniques with network-based graph methods, highlighting that hybrid approaches can improve accuracy.
+          </p>
+          <a href="files/FakeReview_LitReview.pdf" download class="btn btn-custom btn-sm">Download Review</a>
         </div>
       </div>
+    </div>
 
-      <!-- Bachelor’s Project 1 -->
-      <div class="col-md-4">
-        <div class="card project-card">
-          <div class="card-body">
-            <h5 class="card-title">Safe and Cost-Effective Massage Band</h5>
-            <p>
-              Designed a low-cost wearable massage band using air compression to relieve muscle and joint pain. Controlled via mobile app, powered by Arduino and rechargeable battery.
-            </p>
-            <a href="files/MassageBand.pdf" download class="btn btn-custom btn-sm">Download Report</a>
-          </div>
+    <!-- Bachelor’s Project 1 -->
+    <div class="col-md-4">
+      <div class="card project-card">
+        <div class="card-body">
+          <h5 class="card-title">Safe and Cost-Effective Massage Band</h5>
+          <p>
+            Designed a low-cost wearable massage band using air compression to relieve muscle and joint pain. Controlled via mobile app, powered by Arduino and rechargeable battery.
+          </p>
+          <a href="files/MassageBand.pdf" download class="btn btn-custom btn-sm">Download Report</a>
         </div>
       </div>
+    </div>
 
-      <!-- Bachelor’s Project 2 -->
-      <div class="col-md-4">
-        <div class="card project-card">
-          <div class="card-body">
-            <h5 class="card-title">Script Voice – Document Reader</h5>
-            <p>
-              Assistive device for visually impaired individuals. Uses Raspberry Pi, OCR, and text-to-speech synthesis to convert scanned text into audio output.
-            </p>
-            <a href="files/ScriptVoice.pdf" download class="btn btn-custom btn-sm">Download Report</a>
-          </div>
+    <!-- Bachelor’s Project 2 -->
+    <div class="col-md-4">
+      <div class="card project-card">
+        <div class="card-body">
+          <h5 class="card-title">Script Voice – Document Reader</h5>
+          <p>
+            Assistive device for visually impaired individuals. Uses Raspberry Pi, OCR, and text-to-speech synthesis to convert scanned text into audio output.
+          </p>
+          <a href="files/ScriptVoice.pdf" download class="btn btn-custom btn-sm">Download Report</a>
         </div>
       </div>
+    </div>
 
-      <!-- Bachelor’s Project 3 -->
-      <div class="col-md-4">
-        <div class="card project-card">
-          <div class="card-body">
-            <h5 class="card-title">Radio Frequency Light Sources – Seminar</h5>
-            <p>
-              Technical seminar on RF lamps that operate without electrodes. Reviewed advances in semiconductor switching and RF plasma, with applications and real-world examples.
-            </p>
-            <a href="files/RF_LightSources.pdf" download class="btn btn-custom btn-sm">Download Report</a>
-          </div>
+    <!-- Bachelor’s Project 3 -->
+    <div class="col-md-4">
+      <div class="card project-card">
+        <div class="card-body">
+          <h5 class="card-title">Radio Frequency Light Sources – Seminar</h5>
+          <p>
+            Technical seminar on RF lamps that operate without electrodes. Reviewed advances in semiconductor switching and RF plasma, with applications and real-world examples.
+          </p>
+          <a href="files/RF_LightSources.pdf" download class="btn btn-custom btn-sm">Download Report</a>
         </div>
       </div>
+    </div>
 
-
+  </div>
+</div>
 
 
   </div>
